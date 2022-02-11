@@ -2,7 +2,7 @@
     /* Regex Formatting Generator Script for the Nginx Ultimate Bad Bot Blocker
      * Adapted from Script Copyright (c) 2017 Stevie-Ray - https://github.com/Stevie-Ray
      * Adapted by: Mitchell Krog (mitchellkrog@gmail.com) - https://github.com/mitchellkrogza
-     * Repo Url: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+     * Repo Url: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
      */
 namespace mitchellkrogza;
 
@@ -11,7 +11,7 @@ use Mso\IdnaConvert\IdnaConvert;
 class Generator
 {
     
-    private $projectUrl = "https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker";
+    private $projectUrl = "https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker";
     public function generateFiles()
     {
         date_default_timezone_set('Africa/Johannesburg');

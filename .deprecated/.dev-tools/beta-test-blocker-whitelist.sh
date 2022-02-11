@@ -2,7 +2,7 @@
 # Curl Testing Script for Nginx Ultimate Bad Bot Blocker
 # Created by: Mitchell Krog (mitchellkrog@gmail.com)
 # Copyright: Mitchell Krog - https://github.com/mitchellkrogza
-# Repo Url: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+# Repo Url: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 
 ##############################################################################                                                                
 #       _  __     _                                                          #
@@ -132,11 +132,11 @@ ed -s ${_inputdb1}<<\IN
 1,/# START MAKE BAD BOTS GOOD ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END MAKE BAD BOTS GOOD ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/test_units/blacklist-user-agents.conf
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/test_units/blacklist-user-agents.conf
 /# START MAKE BAD BOTS GOOD ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END MAKE BAD BOTS GOOD ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/test_units/blacklist-user-agents.conf
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/test_units/blacklist-user-agents.conf
 q
 IN
 rm ${_inputdb1}
@@ -162,11 +162,11 @@ ed -s ${_inputdb2}<<\IN
 1,/# START MAKE BAD REFERRERS GOOD ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END MAKE BAD REFERRERS GOOD ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/test_units/custom-bad-referrers.conf
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/test_units/custom-bad-referrers.conf
 /# START MAKE BAD REFERRERS GOOD ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END MAKE BAD REFERRERS GOOD ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/test_units/custom-bad-referrers.conf
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/test_units/custom-bad-referrers.conf
 q
 IN
 rm ${_inputdb2}

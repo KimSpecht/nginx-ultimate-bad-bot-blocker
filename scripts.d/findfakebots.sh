@@ -2,7 +2,7 @@
 # FIND FAKE GOOGLEBOTS AND BINGBOTS FROM NGINX SERVER LOG FILES
 # Created by: Mitchell Krog (mitchellkrog@gmail.com)
 # Copyright: Mitchell Krog - https://github.com/mitchellkrogza
-# Repo Url: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+# Repo Url: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 
 ##############################################################################
 #       _  __     _                                                          #
@@ -121,7 +121,7 @@
 # When you see the email you will receive you will see a list of IP's detected and below that a list of the same IP's with their reverse DNS Names.
 # Before you report them in this repo as issues you need to first get the whois details of each and log ONLY ONE IP per issue.
 #
-# See example: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/issues/293
+# See example: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/issues/293
 #
 # Your issue MUST include:
 # - the whois output from https://www.ultratools.com/tools/ipWhoisLookupResult

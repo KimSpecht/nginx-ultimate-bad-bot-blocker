@@ -1,4 +1,4 @@
-<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/_logo_nginx_bad_bot_blocker.png" alt="Nginx Ultimate Bad Bot Spam Referrer Blocker - Nginx Block Bad Bots, Vulnerability Scanners, Malware and Adware, Malicious Sites, Spam Referrers, Bad Referrers, Spam Blocker with DDOS, Wordpress Theme Detector Blocking and Fail2Ban Jail for Repeat Offenders"/><img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/spacer.jpg"/>[![DUB](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/LICENSE.md)<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/spacer.jpg"/>[![GitHub release](https://img.shields.io/github/release/mitchellkrogza/nginx-ultimate-bad-bot-blocker.svg)](https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/releases/latest)<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/spacer.jpg"/>[![Build Status](https://travis-ci.org/mitchellkrogza/nginx-ultimate-bad-bot-blocker.svg?branch=master)](https://travis-ci.org/mitchellkrogza/nginx-ultimate-bad-bot-blocker)<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/spacer.jpg"/><a href='https://twitter.com/ubuntu101za'><img src='https://img.shields.io/twitter/follow/ubuntu101za.svg?style=social&label=Follow' alt='Follow @ubuntu101za'></a>
+<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/_logo_nginx_bad_bot_blocker.png" alt="Nginx Ultimate Bad Bot Spam Referrer Blocker - Nginx Block Bad Bots, Vulnerability Scanners, Malware and Adware, Malicious Sites, Spam Referrers, Bad Referrers, Spam Blocker with DDOS, Wordpress Theme Detector Blocking and Fail2Ban Jail for Repeat Offenders"/><img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/spacer.jpg"/>[![DUB](https://img.shields.io/dub/l/vibe-d.svg)](https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/LICENSE.md)<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/spacer.jpg"/>[![GitHub release](https://img.shields.io/github/release/KimSpecht/nginx-ultimate-bad-bot-blocker.svg)](https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/releases/latest)<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/spacer.jpg"/>[![Build Status](https://travis-ci.org/KimSpecht/nginx-ultimate-bad-bot-blocker.svg?branch=master)](https://travis-ci.org/KimSpecht/nginx-ultimate-bad-bot-blocker)<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/spacer.jpg"/><a href='https://twitter.com/ubuntu101za'><img src='https://img.shields.io/twitter/follow/ubuntu101za.svg?style=social&label=Follow' alt='Follow @ubuntu101za'></a>
 
 # NGINX Sample SSL configuration file for the NGINX Ultimate Bad Bot Blocker using a Free SSL Certificate from Let's Encrypt
 
@@ -104,7 +104,7 @@ Enjoy it and what this will do for your web site.
 ************************************************
 ## Make sure to keep your /etc/conf.d/globalblacklist.conf file up to date 
 
-New referrers and bots are added every other day. Each time you update **MAKE SURE** to copy your whitelist section of IP addresses into the new file. A set of generator scripts are coming soon which will ease this burden for you allowing you to pull daily from the GIT repo and compile the scripts on your server automatically including your whitelisted IP's each time. These generator scripts are coming soon so please be patient as they have to be thoroughly tested for public use before I release them. <a href="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/update-ngxblocker">Use the fabulous auto-update script here.</a>
+New referrers and bots are added every other day. Each time you update **MAKE SURE** to copy your whitelist section of IP addresses into the new file. A set of generator scripts are coming soon which will ease this burden for you allowing you to pull daily from the GIT repo and compile the scripts on your server automatically including your whitelisted IP's each time. These generator scripts are coming soon so please be patient as they have to be thoroughly tested for public use before I release them. <a href="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/update-ngxblocker">Use the fabulous auto-update script here.</a>
 
 (See at very bottom of this page for all the Cloudflare IP ranges you should be whitelisting if you are on Cloudflare)
 
@@ -172,7 +172,7 @@ server {
 ************************************************
 ## CHECK FOR FREE IF YOUR WEB SITE IS COMPROMISED OR BLACKLISTED
 
-<a href="https://www.gravityscan.com/" target="_blank"><img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/gravity-scan-by-wordfence.png" alt="Check if your web site is blacklisted, hacked or compromised using the awesome Free GravityScan tool"/></a>
+<a href="https://www.gravityscan.com/" target="_blank"><img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/gravity-scan-by-wordfence.png" alt="Check if your web site is blacklisted, hacked or compromised using the awesome Free GravityScan tool"/></a>
 
 ************************************************
 # HAS YOUR WEB SITE BEEN HACKED?
@@ -237,7 +237,7 @@ Thousand of hours of programming and testing have gone into this project, show s
 
 [![Help me out with a mug of beer](https://img.shields.io/badge/Help%20-%20me%20out%20with%20a%20mug%20of%20%F0%9F%8D%BA-blue.svg)](https://paypal.me/mitchellkrog/) or [![Help me feed my cat](https://img.shields.io/badge/Help%20-%20me%20feed%20my%20hungry%20cat%20%F0%9F%98%B8-blue.svg)](https://paypal.me/mitchellkrog/)
 
-<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/zuko.png"/>
+<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/zuko.png"/>
 
 ************************************************
 # MIT License

@@ -1,7 +1,7 @@
 ###################################################################
 # The Ultimate robots.txt Bot and User-Agent Blocker
 # Copyright:
-# https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+# https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 ###################################################################
 
 ### Version Information #

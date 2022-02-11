@@ -2,7 +2,7 @@
 # Travis CI Generating and Building for the Nginx Ultimate Bad Bot Blocker (using non standard folder locations)
 # Created by: Mitchell Krog (mitchellkrog@gmail.com)
 # Copyright: Mitchell Krog - https://github.com/mitchellkrogza
-# Repo Url: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+# Repo Url: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 
 ##############################################################################                                                                
 #       _  __     _                                                          #

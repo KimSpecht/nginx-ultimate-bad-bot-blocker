@@ -2,7 +2,7 @@
 # Write Build / Version Number into README.md, AUTO-CONFIGURATION.md and MANUAL-CONFIGURATION.md files
 # Created by: Mitchell Krog (mitchellkrog@gmail.com)
 # Copyright: Mitchell Krog - https://github.com/mitchellkrogza
-# Repo Url: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+# Repo Url: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 
 ##############################################################################                                                                
 #       _  __     _                                                          #
@@ -85,19 +85,19 @@ updateReadme () {
 # PRINT VERSION INFORMATION INTO README.md
 # ****************************************
 
-printf '%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s' "$_startmarker" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrers Blocked: " "[$BAD_REFERRERS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)" "#### Bad User-Agents (Bots) Blocked: " "[$BAD_BOTS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-user-agents.list)" "#### Fake Googlebots Blocked: " "[$FAKE_GOOGLE_BOTS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/fake-googlebots.list)" "$_endmarker" >> "$_tmpnginxA"
+printf '%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s' "$_startmarker" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrers Blocked: " "[$BAD_REFERRERS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)" "#### Bad User-Agents (Bots) Blocked: " "[$BAD_BOTS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-user-agents.list)" "#### Fake Googlebots Blocked: " "[$FAKE_GOOGLE_BOTS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/fake-googlebots.list)" "$_endmarker" >> "$_tmpnginxA"
 mv ${_tmpnginxA} ${_inputdbA}
 ed -s ${_inputdbA}<<\IN
 1,/_______________/d
 /____________________/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/README.md
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/README.md
 /_______________/x
 .t.
 .,/____________________/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/README.md
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/README.md
 q
 IN
 rm ${_inputdbA}
@@ -114,13 +114,13 @@ ed -s ${_inputdbA}<<\IN
 1,/_______________________/d
 /__________________________/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/README.md
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/README.md
 /_______________________/x
 .t.
 .,/__________________________/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/README.md
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/README.md
 q
 IN
 rm ${_inputdbA}
@@ -131,19 +131,19 @@ updateAutoConfiguration () {
 # PRINT VERSION INFORMATION INTO AUTO-CONFIGURATION.md
 # ****************************************************
 
-printf '%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s' "$_startmarker" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrers Blocked: " "[$BAD_REFERRERS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)" "#### Bad User-Agents (Bots) Blocked: " "[$BAD_BOTS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-user-agents.list)" "#### Fake Googlebots Blocked: " "[$FAKE_GOOGLE_BOTS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/fake-googlebots.list)"  "$_endmarker" >> "${_tmpnginxA}"
+printf '%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s' "$_startmarker" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrers Blocked: " "[$BAD_REFERRERS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)" "#### Bad User-Agents (Bots) Blocked: " "[$BAD_BOTS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-user-agents.list)" "#### Fake Googlebots Blocked: " "[$FAKE_GOOGLE_BOTS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/fake-googlebots.list)"  "$_endmarker" >> "${_tmpnginxA}"
 mv ${_tmpnginxA} ${_inputdbA}
 ed -s ${_inputdbA}<<\IN
 1,/_______________/d
 /____________________/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/AUTO-CONFIGURATION.md
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/AUTO-CONFIGURATION.md
 /_______________/x
 .t.
 .,/____________________/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/AUTO-CONFIGURATION.md
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/AUTO-CONFIGURATION.md
 q
 IN
 rm ${_inputdbA}
@@ -154,19 +154,19 @@ updateManualConfiguration () {
 # PRINT VERSION INFORMATION INTO MANUAL-CONFIGURATION.md
 # ******************************************************
 
-printf '%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s' "$_startmarker" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrers Blocked: " "[$BAD_REFERRERS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)" "#### Bad User-Agents (Bots) Blocked: " "[$BAD_BOTS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-user-agents.list)" "#### Fake Googlebots Blocked: " "[$FAKE_GOOGLE_BOTS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/fake-googlebots.list)" "$_endmarker" >> "${_tmpnginxA}"
+printf '%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s' "$_startmarker" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrers Blocked: " "[$BAD_REFERRERS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)" "#### Bad User-Agents (Bots) Blocked: " "[$BAD_BOTS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-user-agents.list)" "#### Fake Googlebots Blocked: " "[$FAKE_GOOGLE_BOTS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/fake-googlebots.list)" "$_endmarker" >> "${_tmpnginxA}"
 mv ${_tmpnginxA} ${_inputdbA}
 ed -s ${_inputdbA}<<\IN
 1,/_______________/d
 /____________________/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/MANUAL-CONFIGURATION.md
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/MANUAL-CONFIGURATION.md
 /_______________/x
 .t.
 .,/____________________/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/MANUAL-CONFIGURATION.md
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/MANUAL-CONFIGURATION.md
 q
 IN
 rm ${_inputdbA}
@@ -177,19 +177,19 @@ updateGoogleGhostSpam () {
 # PRINT VERSION INFORMATION INTO Google Ghost Spam README
 # *******************************************************
 
-printf '%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s' "$_startmarker" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrers Blocked: " "[$BAD_REFERRERS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)" "#### Bad User-Agents (Bots) Blocked: " "[$BAD_BOTS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-user-agents.list)" "#### Fake Googlebots Blocked: " "[$FAKE_GOOGLE_BOTS](https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/_generator_lists/fake-googlebots.list)" "$_endmarker" >> "${_tmpnginxA}"
+printf '%s\n%s%s\n%s%s\n%s%s\n%s%s\n%s' "$_startmarker" "#### Version: " "$MY_GIT_TAG" "#### Bad Referrers Blocked: " "[$BAD_REFERRERS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-referrers.list)" "#### Bad User-Agents (Bots) Blocked: " "[$BAD_BOTS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/bad-user-agents.list)" "#### Fake Googlebots Blocked: " "[$FAKE_GOOGLE_BOTS](https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/_generator_lists/fake-googlebots.list)" "$_endmarker" >> "${_tmpnginxA}"
 mv ${_tmpnginxA} ${_inputdbA}
 ed -s ${_inputdbA}<<\IN
 1,/_______________/d
 /____________________/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/_google_analytics_ghost_spam/README.md
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/_google_analytics_ghost_spam/README.md
 /_______________/x
 .t.
 .,/____________________/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/_google_analytics_ghost_spam/README.md
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/_google_analytics_ghost_spam/README.md
 q
 IN
 rm ${_inputdbA}

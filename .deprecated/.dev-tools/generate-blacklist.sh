@@ -2,7 +2,7 @@
 # Generator Script for the Nginx Ultimate Bad Bot Blocker
 # Created by: Mitchell Krog (mitchellkrog@gmail.com)
 # Copyright: Mitchell Krog - https://github.com/mitchellkrogza
-# Repo Url: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+# Repo Url: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 
 ##############################################################################                                                                
 #       _  __     _                                                          #
@@ -183,13 +183,13 @@ ed -s ${_inputdb1}<<\IN
 1,/# START GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END GOOD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb1}
@@ -209,11 +209,11 @@ ed -s ${_inputdb2}<<\IN
 1,/# START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END ALLOWED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb2}
@@ -233,11 +233,11 @@ ed -s ${_inputdb3}<<\IN
 1,/# START LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END LIMITED BOTS ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb3}
@@ -257,11 +257,11 @@ ed -s ${_inputdb4}<<\IN
 1,/# START BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb4}
@@ -281,11 +281,11 @@ ed -s ${_inputdb5}<<\IN
 1,/# START BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb5}
@@ -305,11 +305,11 @@ ed -s ${_inputdb6}<<\IN
 1,/# START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb6}
@@ -329,11 +329,11 @@ ed -s ${_inputdb7}<<\IN
 1,/# START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END BING IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb7}
@@ -353,11 +353,11 @@ ed -s ${_inputdb8}<<\IN
 1,/# START WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END WP THEME DETECTORS ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb8}
@@ -377,11 +377,11 @@ ed -s ${_inputdb9}<<\IN
 1,/# START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb9}
@@ -401,11 +401,11 @@ ed -s ${_inputdb10}<<\IN
 1,/# START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END CLOUDFLARE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb10}
@@ -425,11 +425,11 @@ ed -s ${_inputdb11}<<\IN
 1,/# START KNOWN BAD IP ADDRESSES ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END KNOWN BAD IP ADDRESSES ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /# START KNOWN BAD IP ADDRESSES ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END KNOWN BAD IP ADDRESSES ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdb11}
@@ -449,11 +449,11 @@ ed -s ${_inputdb12}<<\IN
 1,/# START FAKE GOOGLEBOTS ### DO NOT EDIT THIS LINE AT ALL ###/d
 /# END FAKE GOOGLEBOTS ### DO NOT EDIT THIS LINE AT ALL ###/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist-testing.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist-testing.template
 /# START FAKE GOOGLEBOTS ### DO NOT EDIT THIS LINE AT ALL ###/x
 .t.
 .,/# END FAKE GOOGLEBOTS ### DO NOT EDIT THIS LINE AT ALL ###/-d
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist-testing.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist-testing.template
 q
 IN
 rm ${_inputdb12}
@@ -468,13 +468,13 @@ ed -s ${_inputdbA}<<\IN
 1,/### VERSION INFORMATION #/d
 /### VERSION INFORMATION ##/,$d
 ,d
-.r /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+.r /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 /### VERSION INFORMATION #/x
 .t.
 .,/### VERSION INFORMATION ##/-d
 #,p
 #,p used to print output replaced with w below to write
-w /home/travis/build/mitchellkrogza/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
+w /home/travis/build/KimSpecht/nginx-ultimate-bad-bot-blocker/.dev-tools/globalblacklist.template
 q
 IN
 rm ${_inputdbA}

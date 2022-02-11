@@ -2,13 +2,13 @@
 
 # Shell Script for Installing the Nginx Bad Bot Blocker
 # Copyright - https://github.com/mitchellkrogza
-# Project Url: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+# Project Url: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 # Version 2.2017.07
 # Install script & Alpine Linux package by Stuart Cardall: https://github.com/itoffshore
 
 # PLEASE READ CONFIGURATION INSTRUCTIONS BEFORE USING THIS - THIS IS ONLY A PARTIAL INSTALLER
 # FOR COPYING THE FILES CORRECTLY TO THE NGINX FOLDERS:
-# https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/CONFIGURATION.md
+# https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/CONFIGURATION.md
 
 # Use this script for a new install or to update to a new release (which has a new configuration
 # file structure) and thereafter use the Auto Update Shell Script update-ngxblocker to update
@@ -18,13 +18,13 @@
 
 ### The installer script does not carry out STEP 6 of the configuration instructions for you.
 ### You must manually edit any vhost files with the includes in STEP 6 or it will not actually be protecting any sites.
-### READ: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/CONFIGURATION.md
+### READ: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/CONFIGURATION.md
 
 ### You can also now use a setup script contributed by Stuart Cardall to automatically insert the includes for you
-### See - https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/setup-ngxblocker
+### See - https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/setup-ngxblocker
 
 # Save this file as /usr/local/sbin/install-ngxblocker
-# 	sudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/install-ngxblocker -O /usr/local/sbin/install-ngxblocker
+# 	sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/install-ngxblocker -O /usr/local/sbin/install-ngxblocker
 # Make it Executable:
 # 	chmod 700 /usr/local/sbin/install-ngxblocker
 # Run it from the command line:
@@ -35,7 +35,7 @@
 CONF_DIR=/etc/nginx/conf.d
 BOTS_DIR=/etc/nginx/bots.d
 SCRIPT_DIR=/usr/local/sbin
-REPO=https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master
+REPO=https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master
 
 ####### end user configuration ##########################
 OS=$(uname -s)
@@ -354,8 +354,8 @@ main $@
 exit $?
 
 # PLEASE READ CONFIGURATION INSTRUCTIONS
-# https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/CONFIGURATION.md
+# https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/CONFIGURATION.md
 
 # PLEASE ALSO SEE THE SETUP SCRIPT TO INSERT THE NECESSARY INCLUDES FOR YOU
 ### You can now use a setup script contributed by Stuart Cardall to automatically add the includes for you
-### See - https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/setup-ngxblocker
+### See - https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/setup-ngxblocker

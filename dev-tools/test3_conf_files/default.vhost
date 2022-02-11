@@ -7,7 +7,7 @@ server {
 
     ##
     # Nginx Bad Bot Blocker Includes
-    # REPO: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+    # REPO: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
     ##
 	include /etc/nginx/mybots.d/ddos.conf; 
  	include /etc/nginx/mybots.d/blockbots.conf;

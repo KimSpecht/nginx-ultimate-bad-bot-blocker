@@ -2,7 +2,7 @@
 # robots.txt Web Sites Updater for the Nginx Ultimate Bad Bot Blocker
 # Created by: Mitchell Krog (mitchellkrog@gmail.com)
 # Copyright: Mitchell Krog - https://github.com/mitchellkrogza
-# Repo Url: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+# Repo Url: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 
 ##############################################################################                                                                
 #       _  __     _                                                          #
@@ -56,7 +56,7 @@ webfolder=/var/www
 # Fetch Latest robots.txt
 # ***********************
 
-sudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/master/robots.txt/robots.txt -O ${tmpfolder}/robots.txt
+sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/robots.txt/robots.txt -O ${tmpfolder}/robots.txt
 
 # **************************************************************************
 # Loop through web directory, update robots.txt files and update permissions

@@ -13,7 +13,7 @@ If a bot ignores robots.txt (which many do) it will then be blocked outright by 
 ************************************************
 ## Help Support This Project 
 
-[<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/kofi4.png" alt="Buy me Coffee" width="300"/>](https://ko-fi.com/mitchellkrog)
+[<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/kofi4.png" alt="Buy me Coffee" width="300"/>](https://ko-fi.com/mitchellkrog)
 
 ************************************************
 - Created by: https://github.com/mitchellkrogza for use on Nginx Web Server https://www.nginx.com/
@@ -113,9 +113,9 @@ If you believe your name should be here, drop me a line.
 
 Thousand of hours of programming and testing have gone into this project, show some love
 
-[<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/kofi4.png" alt="Buy me Coffee" width="300"/>](https://ko-fi.com/mitchellkrog)
+[<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/kofi4.png" alt="Buy me Coffee" width="300"/>](https://ko-fi.com/mitchellkrog)
 
-<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/zuko.png"/>
+<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/zuko.png"/>
 
 ************************************************
 # MIT License

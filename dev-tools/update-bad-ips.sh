@@ -1,6 +1,6 @@
 #!/bin/bash
 # Generator Script for NGinx Ultimate Bad Bot Blocker
-# REPO: https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+# REPO: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 # Copyright Mitchell Krog - mitchellkrog@gmail.com
 
 # ------------------------------------------------------------------------------

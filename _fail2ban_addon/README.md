@@ -4,14 +4,14 @@
 ************************************************
 ## Help Support This Project 
 
-[<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/kofi4.png" alt="Buy me Coffee" width="300"/>](https://ko-fi.com/mitchellkrog)
+[<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/kofi4.png" alt="Buy me Coffee" width="300"/>](https://ko-fi.com/mitchellkrog)
 
 ************************************************
 ### Version: 1.1
 
 # Add on for Nginx Ultimate Bad Bot, User-Agent and Spam Referrer Blocker
 
-[![NGINX ULTIMATE BAD BOT BLOCKER](https://img.shields.io/badge/NGINX%20-%20ULTIMATE%20BAD%20BOT%20BLOCKER%20%E2%9B%94-blue.svg)](https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker)
+[![NGINX ULTIMATE BAD BOT BLOCKER](https://img.shields.io/badge/NGINX%20-%20ULTIMATE%20BAD%20BOT%20BLOCKER%20%E2%9B%94-blue.svg)](https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker)
 
 ************************************************
 - Created by: https://github.com/mitchellkrogza for use on Nginx Web Server https://www.nginx.com/
@@ -115,7 +115,7 @@ and ban them for 1 day. This works like a charm as an add-on for my Nginx Bad
 Bot Blocker which takes care of generating the 444 or 403 errors based on the extensive
 list of Bad Referers, Bots, Scrapers and IP addresses that it covers. This provides short
 block periods of one day which is enough to keep agressive bots from filling up your log files.
-See - https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker for more info on the Nginx Bad Bot Blocker
+See - https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker for more info on the Nginx Bad Bot Blocker
 
 This custom action requires a custom jail in your jail.local file for Fail2Ban
 
@@ -149,7 +149,7 @@ Be sure to add the rate limiting zone to your nginx.conf as per instructions in 
 ************************************************
 ### SOME OTHER AWESOME FREE PROJECTS
 
-- https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker
+- https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 - https://github.com/mitchellkrogza/apache-ultimate-bad-bot-blocker
 - https://github.com/mitchellkrogza/Badd-Boyz-Hosts
 - https://github.com/mitchellkrogza/Ultimate.Hosts.Blacklist
@@ -208,9 +208,9 @@ If you believe your name should be here, drop me a line.
 
 ## Help Support This Project 
 
-[<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/kofi4.png" alt="Buy me Coffee" width="300"/>](https://ko-fi.com/mitchellkrog)
+[<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/kofi4.png" alt="Buy me Coffee" width="300"/>](https://ko-fi.com/mitchellkrog)
 
-<img src="https://github.com/mitchellkrogza/nginx-ultimate-bad-bot-blocker/blob/master/.assets/zuko.png"/>
+<img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/zuko.png"/>
 
 ************************************************
 # MIT License
