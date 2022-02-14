@@ -82,7 +82,7 @@ echo "${bold}${green}---------------------------------------"
 echo "${bold}${green}Activating Users whitelist-domains.conf"
 echo "${bold}${green}---------------------------------------"
 printf "\n"
-sudo cp ./dev-tools/test_units/whitelist-domains.conf /etc/nginx/bots.d/whitelist-domains.conf
+sudo cp ./dev-tools/test_units/whitelist-domains.conf /etc/nginx-rc/bots.d/whitelist-domains.conf
 }
 
 run_curltest1 () {

@@ -80,10 +80,10 @@ echo "${bold}${green}-------------------------------------------------------"
 echo "${bold}${green}Backup all conf files and folders used during this test"
 echo "${bold}${green}-------------------------------------------------------"
 printf "\n"
-sudo cp /etc/nginx/bots.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/beta_conf_files/bots.d/
-sudo cp /etc/nginx/conf.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/beta_conf_files/conf.d/
-sudo cp /etc/nginx/sites-available/default.vhost ${TRAVIS_BUILD_DIR}/.dev-tools/beta_conf_files/default.vhost
-sudo cp /etc/nginx/nginx.conf ${TRAVIS_BUILD_DIR}/.dev-tools/beta_conf_files/nginx.conf
+sudo cp /etc/nginx-rc/bots.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/beta_conf_files/bots.d/
+sudo cp /etc/nginx-rc/conf.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/beta_conf_files/conf.d/
+sudo cp /etc/nginx-rc/sites-available/default.vhost ${TRAVIS_BUILD_DIR}/.dev-tools/beta_conf_files/default.vhost
+sudo cp /etc/nginx-rc/nginx.conf ${TRAVIS_BUILD_DIR}/.dev-tools/beta_conf_files/nginx.conf
 }
 
 resetNginx () {
@@ -92,10 +92,10 @@ echo "${bold}${yellow}-----------------------------------"
 echo "${bold}${yellow}Delete Files to force fresh testing"
 echo "${bold}${yellow}-----------------------------------"
 printf "\n"
-sudo rm /etc/nginx/conf.d/*.conf
-sudo rm /etc/nginx/bots.d/*.conf
-ls -la /etc/nginx/conf.d/
-ls -la /etc/nginx/bots.d/
+sudo rm /etc/nginx-rc/conf.d/*.conf
+sudo rm /etc/nginx-rc/bots.d/*.conf
+ls -la /etc/nginx-rc/conf.d/
+ls -la /etc/nginx-rc/bots.d/
 }
 
 updateBlocker () {
@@ -114,8 +114,8 @@ echo "${bold}${yellow}---------------------------------------------------"
 echo "${bold}${yellow}Copy Test Unit of globalblacklist.conf file to test"
 echo "${bold}${yellow}---------------------------------------------------"
 printf "\n"
-#sudo cp ${TRAVIS_BUILD_DIR}/conf.d/globalblacklist-testing-version.conf /etc/nginx/conf.d/globalblacklist.conf
-sudo cp ${TRAVIS_BUILD_DIR}/conf.d/globalblacklist-testing-version-oldregexboundaries.conf /etc/nginx/conf.d/globalblacklist.conf
+#sudo cp ${TRAVIS_BUILD_DIR}/conf.d/globalblacklist-testing-version.conf /etc/nginx-rc/conf.d/globalblacklist.conf
+sudo cp ${TRAVIS_BUILD_DIR}/conf.d/globalblacklist-testing-version-oldregexboundaries.conf /etc/nginx-rc/conf.d/globalblacklist.conf
 }
 
 # -------------

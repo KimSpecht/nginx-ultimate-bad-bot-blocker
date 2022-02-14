@@ -42,7 +42,7 @@ Please make sure you are subscribed to Github Notifications to be notified when 
 
 - This is our new preferred method of installation which is now done through a set of shell scripts contributed to this repo and maintained by Stuart Cardall @itoffshore who is one of the Alpine Linux package maintainers. 
 
-- The instructions below are for a quick and painfree installation process which downloads all required files for the blocker and the scripts include adding the required includes to your nginx.conf and nginx .vhost files. The setup script assumes your vhost config files are located in /etc/nginx/sites-available/ and each vhost config file ends with a file extension of .vhost
+- The instructions below are for a quick and painfree installation process which downloads all required files for the blocker and the scripts include adding the required includes to your nginx.conf and nginx .vhost files. The setup script assumes your vhost config files are located in /etc/nginx-rc/sites-available/ and each vhost config file ends with a file extension of .vhost
 
 - For manual installation instructions please see - Please see: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/MANUAL-CONFIGURATION.md
 
@@ -104,23 +104,23 @@ Checking url: https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot
 
 ** Dry Run ** | not updating files | run  as 'install-ngxblocker -x' to install files.
 
-Creating directory: /etc/nginx/bots.d
+Creating directory: /etc/nginx-rc/bots.d
 
 REPO = https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master
 
-Downloading [FROM]=>  [REPO]/conf.d/globalblacklist.conf            [TO]=>  /etc/nginx/conf.d/globalblacklist.conf
-Downloading [FROM]=>  [REPO]/conf.d/botblocker-nginx-settings.conf  [TO]=>  /etc/nginx/conf.d/botblocker-nginx-settings.conf
+Downloading [FROM]=>  [REPO]/conf.d/globalblacklist.conf            [TO]=>  /etc/nginx-rc/conf.d/globalblacklist.conf
+Downloading [FROM]=>  [REPO]/conf.d/botblocker-nginx-settings.conf  [TO]=>  /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf
 
 REPO = https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master
 
-Downloading [FROM]=>  [REPO]/bots.d/blockbots.conf              [TO]=>  /etc/nginx/bots.d/blockbots.conf
-Downloading [FROM]=>  [REPO]/bots.d/ddos.conf                   [TO]=>  /etc/nginx/bots.d/ddos.conf
-Downloading [FROM]=>  [REPO]/bots.d/whitelist-ips.conf          [TO]=>  /etc/nginx/bots.d/whitelist-ips.conf
-Downloading [FROM]=>  [REPO]/bots.d/whitelist-domains.conf      [TO]=>  /etc/nginx/bots.d/whitelist-domains.conf
-Downloading [FROM]=>  [REPO]/bots.d/blacklist-user-agents.conf  [TO]=>  /etc/nginx/bots.d/blacklist-user-agents.conf
-Downloading [FROM]=>  [REPO]/bots.d/blacklist-ips.conf          [TO]=>  /etc/nginx/bots.d/blacklist-ips.conf
-Downloading [FROM]=>  [REPO]/bots.d/bad-referrer-words.conf     [TO]=>  /etc/nginx/bots.d/bad-referrer-words.conf
-Downloading [FROM]=>  [REPO]/bots.d/custom-bad-referrers.conf   [TO]=>  /etc/nginx/bots.d/custom-bad-referrers.conf
+Downloading [FROM]=>  [REPO]/bots.d/blockbots.conf              [TO]=>  /etc/nginx-rc/bots.d/blockbots.conf
+Downloading [FROM]=>  [REPO]/bots.d/ddos.conf                   [TO]=>  /etc/nginx-rc/bots.d/ddos.conf
+Downloading [FROM]=>  [REPO]/bots.d/whitelist-ips.conf          [TO]=>  /etc/nginx-rc/bots.d/whitelist-ips.conf
+Downloading [FROM]=>  [REPO]/bots.d/whitelist-domains.conf      [TO]=>  /etc/nginx-rc/bots.d/whitelist-domains.conf
+Downloading [FROM]=>  [REPO]/bots.d/blacklist-user-agents.conf  [TO]=>  /etc/nginx-rc/bots.d/blacklist-user-agents.conf
+Downloading [FROM]=>  [REPO]/bots.d/blacklist-ips.conf          [TO]=>  /etc/nginx-rc/bots.d/blacklist-ips.conf
+Downloading [FROM]=>  [REPO]/bots.d/bad-referrer-words.conf     [TO]=>  /etc/nginx-rc/bots.d/bad-referrer-words.conf
+Downloading [FROM]=>  [REPO]/bots.d/custom-bad-referrers.conf   [TO]=>  /etc/nginx-rc/bots.d/custom-bad-referrers.conf
 
 REPO = https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master
 
@@ -147,23 +147,23 @@ This will give you the following output:
 ```text
 Checking url: https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/include_filelist.txt
 
-Creating directory: /etc/nginx/bots.d
+Creating directory: /etc/nginx-rc/bots.d
 
 REPO = https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master
 
-Downloading [FROM]=>  [REPO]/conf.d/globalblacklist.conf            [TO]=>  /etc/nginx/conf.d/globalblacklist.conf...OK
-Downloading [FROM]=>  [REPO]/conf.d/botblocker-nginx-settings.conf  [TO]=>  /etc/nginx/conf.d/botblocker-nginx-settings.conf...OK
+Downloading [FROM]=>  [REPO]/conf.d/globalblacklist.conf            [TO]=>  /etc/nginx-rc/conf.d/globalblacklist.conf...OK
+Downloading [FROM]=>  [REPO]/conf.d/botblocker-nginx-settings.conf  [TO]=>  /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf...OK
 
 REPO = https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master
 
-Downloading [FROM]=>  [REPO]/bots.d/blockbots.conf              [TO]=>  /etc/nginx/bots.d/blockbots.conf...OK
-Downloading [FROM]=>  [REPO]/bots.d/ddos.conf                   [TO]=>  /etc/nginx/bots.d/ddos.conf...OK
-Downloading [FROM]=>  [REPO]/bots.d/whitelist-ips.conf          [TO]=>  /etc/nginx/bots.d/whitelist-ips.conf...OK
-Downloading [FROM]=>  [REPO]/bots.d/whitelist-domains.conf      [TO]=>  /etc/nginx/bots.d/whitelist-domains.conf...OK
-Downloading [FROM]=>  [REPO]/bots.d/blacklist-user-agents.conf  [TO]=>  /etc/nginx/bots.d/blacklist-user-agents.conf...OK
-Downloading [FROM]=>  [REPO]/bots.d/blacklist-ips.conf          [TO]=>  /etc/nginx/bots.d/blacklist-ips.conf...OK
-Downloading [FROM]=>  [REPO]/bots.d/bad-referrer-words.conf     [TO]=>  /etc/nginx/bots.d/bad-referrer-words.conf...OK
-Downloading [FROM]=>  [REPO]/bots.d/custom-bad-referrers.conf   [TO]=>  /etc/nginx/bots.d/custom-bad-referrers.conf...OK
+Downloading [FROM]=>  [REPO]/bots.d/blockbots.conf              [TO]=>  /etc/nginx-rc/bots.d/blockbots.conf...OK
+Downloading [FROM]=>  [REPO]/bots.d/ddos.conf                   [TO]=>  /etc/nginx-rc/bots.d/ddos.conf...OK
+Downloading [FROM]=>  [REPO]/bots.d/whitelist-ips.conf          [TO]=>  /etc/nginx-rc/bots.d/whitelist-ips.conf...OK
+Downloading [FROM]=>  [REPO]/bots.d/whitelist-domains.conf      [TO]=>  /etc/nginx-rc/bots.d/whitelist-domains.conf...OK
+Downloading [FROM]=>  [REPO]/bots.d/blacklist-user-agents.conf  [TO]=>  /etc/nginx-rc/bots.d/blacklist-user-agents.conf...OK
+Downloading [FROM]=>  [REPO]/bots.d/blacklist-ips.conf          [TO]=>  /etc/nginx-rc/bots.d/blacklist-ips.conf...OK
+Downloading [FROM]=>  [REPO]/bots.d/bad-referrer-words.conf     [TO]=>  /etc/nginx-rc/bots.d/bad-referrer-words.conf...OK
+Downloading [FROM]=>  [REPO]/bots.d/custom-bad-referrers.conf   [TO]=>  /etc/nginx-rc/bots.d/custom-bad-referrers.conf...OK
 
 REPO = https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master
 
@@ -194,7 +194,7 @@ cd /usr/local/sbin/
 sudo ./setup-ngxblocker
 ```
 
-This will give you output as follows (this output below assumes your nginx.conf file already has the default include of /etc/nginx/conf.d/*)
+This will give you output as follows (this output below assumes your nginx.conf file already has the default include of /etc/nginx-rc/conf.d/*)
 All Nginx installations I know of have this default include in the nginx.conf file distributed with all versions.
 
 ```text
@@ -202,17 +202,17 @@ Checking url: https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot
 
 ** Dry Run ** | not updating files | run  as 'setup-ngxblocker -x' to setup files.
 
-INFO:      /etc/nginx/conf.d/* detected               => /etc/nginx/nginx.conf
-inserting: include /etc/nginx/bots.d/blockbots.conf;  => /etc/nginx/sites-available/mydomain2.com.vhost
-inserting: include /etc/nginx/bots.d/ddos.conf;       => /etc/nginx/sites-available/mydomain2.com.vhost
-inserting: include /etc/nginx/bots.d/blockbots.conf;  => /etc/nginx/sites-available/mydomain1.com.vhost
-inserting: include /etc/nginx/bots.d/ddos.conf;       => /etc/nginx/sites-available/mydomain1.com.vhost
+INFO:      /etc/nginx-rc/conf.d/* detected               => /etc/nginx-rc/nginx.conf
+inserting: include /etc/nginx-rc/bots.d/blockbots.conf;  => /etc/nginx-rc/sites-available/mydomain2.com.vhost
+inserting: include /etc/nginx-rc/bots.d/ddos.conf;       => /etc/nginx-rc/sites-available/mydomain2.com.vhost
+inserting: include /etc/nginx-rc/bots.d/blockbots.conf;  => /etc/nginx-rc/sites-available/mydomain1.com.vhost
+inserting: include /etc/nginx-rc/bots.d/ddos.conf;       => /etc/nginx-rc/sites-available/mydomain1.com.vhost
 
-Whitelisting ip:  x.x.x.x  => /etc/nginx/bots.d/whitelist-ips.conf
+Whitelisting ip:  x.x.x.x  => /etc/nginx-rc/bots.d/whitelist-ips.conf
 ```
 
 This script also whitelists your IP in the whitelist-ips.conf file for you. 
-Further IP's or IP ranges can be added to your customizable whitelits-ips.conf file located in /etc/nginx/bots.d/whitelist-ips.conf.
+Further IP's or IP ranges can be added to your customizable whitelits-ips.conf file located in /etc/nginx-rc/bots.d/whitelist-ips.conf.
 
 **setup-ngxblocker, install-ngxblocker and update-ngxblocker can all be configured with custom installation / update locations from the command line.** 
 
@@ -224,7 +224,7 @@ Further IP's or IP ranges can be added to your customizable whitelits-ips.conf f
 
 Now run the setup script with the -x parameter to make all the necessary changes to your nginx.conf (if required) and also to add the required includes into all your vhost files. 
 
-This setup-ngxblocker script assumes that all your vhost files located in /etc/nginx/sites-available end in an extension .vhost. It is good practice to make all your vhost config files end with a .vhost extension but if you prefer to stick what you already have eg .conf you can simply modify run setup-ngxblocker using the `-e` parameter to specify the extension you use for your vhost files.
+This setup-ngxblocker script assumes that all your vhost files located in /etc/nginx-rc/sites-available end in an extension .vhost. It is good practice to make all your vhost config files end with a .vhost extension but if you prefer to stick what you already have eg .conf you can simply modify run setup-ngxblocker using the `-e` parameter to specify the extension you use for your vhost files.
 
 For instance if your vhost files end in .conf you will change this execute setup-ngxblocker with an additional command line parameter as follows:
 
@@ -242,23 +242,23 @@ You will see output as follows:
 ```text
 Checking url: https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/include_filelist.txt
 
-INFO:      /etc/nginx/conf.d/* detected               => /etc/nginx/nginx.conf
-inserting: include /etc/nginx/bots.d/blockbots.conf;  => /etc/nginx/sites-available/mydomain2.com.vhost
-inserting: include /etc/nginx/bots.d/ddos.conf;       => /etc/nginx/sites-available/mydomain2.com.vhost
-inserting: include /etc/nginx/bots.d/blockbots.conf;  => /etc/nginx/sites-available/mydomain1.com.vhost
-inserting: include /etc/nginx/bots.d/ddos.conf;       => /etc/nginx/sites-available/mydomain1.com.vhost
+INFO:      /etc/nginx-rc/conf.d/* detected               => /etc/nginx-rc/nginx.conf
+inserting: include /etc/nginx-rc/bots.d/blockbots.conf;  => /etc/nginx-rc/sites-available/mydomain2.com.vhost
+inserting: include /etc/nginx-rc/bots.d/ddos.conf;       => /etc/nginx-rc/sites-available/mydomain2.com.vhost
+inserting: include /etc/nginx-rc/bots.d/blockbots.conf;  => /etc/nginx-rc/sites-available/mydomain1.com.vhost
+inserting: include /etc/nginx-rc/bots.d/ddos.conf;       => /etc/nginx-rc/sites-available/mydomain1.com.vhost
 
-Whitelisting ip:  x.x.x.x  => /etc/nginx/bots.d/whitelist-ips.conf
+Whitelisting ip:  x.x.x.x  => /etc/nginx-rc/bots.d/whitelist-ips.conf
 ```
 
-You will note it has done the includes in all the .vhost files on my test bed server and also whitelisted your own IP address in the whitelist-ips.conf file for you. Further IP's or IP ranges can be added to your customizable whitelits-ips.conf file located in /etc/nginx/bots.d/whitelist-ips.conf.
+You will note it has done the includes in all the .vhost files on my test bed server and also whitelisted your own IP address in the whitelist-ips.conf file for you. Further IP's or IP ranges can be added to your customizable whitelits-ips.conf file located in /etc/nginx-rc/bots.d/whitelist-ips.conf.
 
-What this setup script has done has simply added the following include statements into your .vhost files for you, it also adds /etc/nginx/conf.d/* to the includes in nginx.conf (if not already in nginx.conf), otherwise, the whole script will fail.
+What this setup script has done has simply added the following include statements into your .vhost files for you, it also adds /etc/nginx-rc/conf.d/* to the includes in nginx.conf (if not already in nginx.conf), otherwise, the whole script will fail.
 
 ```nginx
 # Bad Bot Blocker
-include /etc/nginx/bots.d/ddos.conf;
-include /etc/nginx/bots.d/blockbots.conf;
+include /etc/nginx-rc/bots.d/ddos.conf;
+include /etc/nginx-rc/bots.d/blockbots.conf;
 ```
 
 **setup-ngxblocker, install-ngxblocker and update-ngxblocker can all be configured with custom installation / update locations from the command line.** 
@@ -275,8 +275,8 @@ Now test your nginx configuration
 and you should see
 
 ```text
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful
+nginx: the configuration file /etc/nginx-rc/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx-rc/nginx.conf test is successful
 ```
 
 ************************************************
@@ -325,18 +325,18 @@ That's it, the blocker will automatically keep itself up to date and also reload
 You can now customize any of the following files below to suit your environment or requirements. These include files never get modified during an update using the auto update script above so whatever customizations you do here will never be overwritten during an update.
 
 ```text
-/etc/nginx/bots.d/whitelist-ips.conf
-/etc/nginx/bots.d/whitelist-domains.conf
-/etc/nginx/bots.d/blockbots.conf
-/etc/nginx/bots.d/blacklist-domains.conf
-/etc/nginx/bots.d/blacklist-user-agents.conf
-/etc/nginx/bots.d/blacklist-ips.conf
-/etc/nginx/bots.d/bad-referrer-words.conf
-/etc/nginx/bots.d/custom-bad-referrers.conf
-/etc/nginx/bots.d/ddos.conf
+/etc/nginx-rc/bots.d/whitelist-ips.conf
+/etc/nginx-rc/bots.d/whitelist-domains.conf
+/etc/nginx-rc/bots.d/blockbots.conf
+/etc/nginx-rc/bots.d/blacklist-domains.conf
+/etc/nginx-rc/bots.d/blacklist-user-agents.conf
+/etc/nginx-rc/bots.d/blacklist-ips.conf
+/etc/nginx-rc/bots.d/bad-referrer-words.conf
+/etc/nginx-rc/bots.d/custom-bad-referrers.conf
+/etc/nginx-rc/bots.d/ddos.conf
 ```
 
-Let's say for some "obscure" reason you actually want to block GoogleBot from accessing your site. You would simply add it to the /etc/nginx/bots.d/blacklist-user-agents.conf file and it will over-ride the default whitelist for GoogleBot. the same applies to any other bots that are whitelisted by default.
+Let's say for some "obscure" reason you actually want to block GoogleBot from accessing your site. You would simply add it to the /etc/nginx-rc/bots.d/blacklist-user-agents.conf file and it will over-ride the default whitelist for GoogleBot. the same applies to any other bots that are whitelisted by default.
 
 All include files are commented for your convenience.
 

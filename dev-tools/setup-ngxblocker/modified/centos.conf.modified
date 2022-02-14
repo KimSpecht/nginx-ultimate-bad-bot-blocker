@@ -29,17 +29,17 @@ http {
     # Nginx Bad Bot Blocker Includes
     # REPO: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
     ##
-	include /etc/nginx/conf.d/botblocker-nginx-settings.conf; 
- 	include /etc/nginx/conf.d/globalblacklist.conf;
+	include /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf;
+ 	include /etc/nginx-rc/conf.d/globalblacklist.conf;
  
     tcp_nodelay         on;
     keepalive_timeout   65;
     types_hash_max_size 2048;
 
-    include             /etc/nginx/mime.types;
+    include             /etc/nginx-rc/mime.types;
     default_type        application/octet-stream;
 
-    # Load modular configuration files from the /etc/nginx/conf.d directory.
+    # Load modular configuration files from the /etc/nginx-rc/conf.d directory.
     # See http://nginx.org/en/docs/ngx_core_module.html#include
     # for more information.
 
@@ -51,7 +51,7 @@ http {
         root         /usr/share/nginx/html;
 
         # Load configuration files for the default server block.
-        include /etc/nginx/default.d/*.conf;
+        include /etc/nginx-rc/default.d/*.conf;
 
         location / {
         }
@@ -81,7 +81,7 @@ http {
 #        ssl_prefer_server_ciphers on;
 #
 #        # Load configuration files for the default server block.
-#        include /etc/nginx/default.d/*.conf;
+#        include /etc/nginx-rc/default.d/*.conf;
 #
 #        location / {
 #        }

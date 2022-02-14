@@ -5,7 +5,7 @@
 # Project Url: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
 # Update script & Alpine Linux package by Stuart Cardall: https://github.com/itoffshore
 
-# MAKE SURE you have all the following files in /etc/nginx/bots.d/ folder
+# MAKE SURE you have all the following files in /etc/nginx-rc/bots.d/ folder
 # ***********************************************************************
 # whitelist-ips.conf
 # whitelist-domains.conf
@@ -36,8 +36,8 @@ SEND_EMAIL_UPDATE="N"
 MG_API_KEY="key-yadayadayada"
 MG_DOMAIN="mg.example.com"
 MG_FROM=""
-CONF_DIR=/etc/nginx/conf.d
-BOTS_DIR=/etc/nginx/bots.d
+CONF_DIR=/etc/nginx-rc/conf.d
+BOTS_DIR=/etc/nginx-rc/bots.d
 INSTALLER=/usr/local/sbin/install-ngxblocker
 LOGGING="N"
 

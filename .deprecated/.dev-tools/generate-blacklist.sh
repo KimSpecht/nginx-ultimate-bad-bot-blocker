@@ -484,7 +484,7 @@ rm ${_inputdbA}
 # **************************************************
 
 sudo cp ${_nginx} ${TRAVIS_BUILD_DIR}/conf.d/globalblacklist.conf
-sudo cp ${_nginx} ${TRAVIS_BUILD_DIR}/_sample_config_files/Engintron_for_cPanel_WHM_Configuration_Example/etc/nginx/conf.d/globalblacklist.conf
+sudo cp ${_nginx} ${TRAVIS_BUILD_DIR}/_sample_config_files/Engintron_for_cPanel_WHM_Configuration_Example/etc/nginx-rc/conf.d/globalblacklist.conf
 
 # **********************
 # Exit With Error Number

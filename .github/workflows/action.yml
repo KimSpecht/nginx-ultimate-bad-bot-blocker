@@ -37,9 +37,9 @@ jobs:
           sudo systemctl start nginx
           sudo nginx -t
           sudo systemctl reload nginx
-          ls -la /etc/nginx/sites-available
-          ls -la /etc/nginx/sites-enabled
-          cat /etc/nginx/sites-available/default
+          ls -la /etc/nginx-rc/sites-available
+          ls -la /etc/nginx-rc/sites-enabled
+          cat /etc/nginx-rc/sites-available/default
           ./dev-tools/generate-files.sh
           ./dev-tools/install-nginx-1.sh
 
@@ -108,7 +108,7 @@ jobs:
       - name: Debug
         shell: bash
         run: | 
-          cat /etc/nginx/nginx.conf
+          cat /etc/nginx-rc/nginx.conf
           sudo systemctl list-units --type=service --all
         if: always()
 

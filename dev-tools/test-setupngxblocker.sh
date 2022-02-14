@@ -79,7 +79,7 @@ sudo bash /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bo
 setup_ubuntu_1804MI3 () {
 sudo cp /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/ubuntu18-hashbucket.conf /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/ubuntu18.conf.modified.hashbucket 
 sudo bash /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/setup-ngxblocker -x -m /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/ubuntu18.conf.modified.hashbucket
-sudo cat /etc/nginx/conf.d/botblocker-nginx-settings.conf > /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/botblocker-nginx-settings.conf
+sudo cat /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf > /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/botblocker-nginx-settings.conf
 }
 
 setup_ubuntu_1604 () {
@@ -170,7 +170,7 @@ sudo bash /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bo
 setup_debian8MI2 () {
 sudo cp /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/debian-8-jessie-hashbucket.conf /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/debian-8-jessie.modified.hashbucket 
 sudo bash /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/setup-ngxblocker -x -m /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/debian-8-jessie.modified.hashbucket
-sudo cat /etc/nginx/conf.d/botblocker-nginx-settings.conf > /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/botblocker-nginx-settings-debian-jessie-8.conf
+sudo cat /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf > /home/runner/work/nginx-ultimate-bad-bot-blocker/nginx-ultimate-bad-bot-blocker/dev-tools/setup-ngxblocker/commented/botblocker-nginx-settings-debian-jessie-8.conf
 }
 
 # -----------------

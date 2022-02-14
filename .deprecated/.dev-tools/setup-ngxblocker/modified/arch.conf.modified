@@ -32,8 +32,8 @@ http {
     # Nginx Bad Bot Blocker Includes
     # REPO: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
     ##
-	include /etc/nginx/conf.d/botblocker-nginx-settings.conf; 
- 	include /etc/nginx/conf.d/globalblacklist.conf;
+	include /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf;
+ 	include /etc/nginx-rc/conf.d/globalblacklist.conf;
  
 
     #keepalive_timeout  0;

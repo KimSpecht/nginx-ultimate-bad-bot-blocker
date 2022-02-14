@@ -5,7 +5,7 @@ Created by: \[la]https://github.com/mitchellkrogza\[ra]
 Copyright Mitchell Krog \[la]mitchellkrog@gmail.com\[ra]
 Version 2.2017.05
 .PP
-\fBIf you miss one step you will get an nginx EMERG error. This is normally a result of not downloading either blockbots.conf, ddos.conf, whitelist\-ips.conf, whitelist\-domains.conf or blacklist\-user\-agents.conf into your /etc/nginx/bots.d folder. If any of the include files are missing Nginx will EMERG and will not reload.\fP
+\fBIf you miss one step you will get an nginx EMERG error. This is normally a result of not downloading either blockbots.conf, ddos.conf, whitelist\-ips.conf, whitelist\-domains.conf or blacklist\-user\-agents.conf into your /etc/nginx-rc/bots.d folder. If any of the include files are missing Nginx will EMERG and will not reload.\fP
 .SH AUTO INSTALLATION INSTRUCTIONS
 .PP
 To Make Sure you copy all the correct files you can now use a simple bash setup script for copying the files into the correct nginx folders for you:
@@ -17,9 +17,9 @@ See: \[la]https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blo
 .PP
 \fBCOPY THE GLOBALBLACKLIST.CONF FILE FROM THE REPO\fP
 .PP
-Copy the contents of \fB/conf.d/globalblacklist.conf\fP into your /etc/nginx/conf.d folder.
+Copy the contents of \fB/conf.d/globalblacklist.conf\fP into your /etc/nginx-rc/conf.d folder.
 .PP
-\fB\fCcd /etc/nginx/conf.d\fR
+\fB\fCcd /etc/nginx-rc/conf.d\fR
 .PP
 \fB\fCsudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx\-ultimate\-bad\-bot\-blocker/master/conf.d/globalblacklist.conf \-O globalblacklist.conf\fR
 .SH STEP 2:
@@ -30,9 +30,9 @@ Copy the contents of \fB/conf.d/globalblacklist.conf\fP into your /etc/nginx/con
 From your command line in Linux type
 .RE
 .PP
-\fB\fCsudo mkdir /etc/nginx/bots.d\fR
+\fB\fCsudo mkdir /etc/nginx-rc/bots.d\fR
 .PP
-\fB\fCcd /etc/nginx/bots.d\fR
+\fB\fCcd /etc/nginx-rc/bots.d\fR
 .RS
 .IP \(bu 2
 copy the blockbots.conf file into that folder
@@ -51,7 +51,7 @@ copy the ddos.conf file into the same folder
 .PP
 Whitelist all your own domain names and IP addresses. \fBPlease note important changes\fP, this is now done using include files so that you do not have to keep reinserting your whitelisted domains and IP addresses every time you update.
 .PP
-\fB\fCcd /etc/nginx/bots.d\fR
+\fB\fCcd /etc/nginx-rc/bots.d\fR
 .RS
 .IP \(bu 2
 copy the whitelist\-ips.conf file into that folder
@@ -72,9 +72,9 @@ When pulling any future updates now you can simply pull the latest globalblackli
 .PP
 \fBBLACKLIST USING YOUR OWN CUSTOM USER\-AGENT BLACKLIST\fP
 .PP
-Copy the custom User\-Agents blacklist file into your /etc/nginx/bots.d folder
+Copy the custom User\-Agents blacklist file into your /etc/nginx-rc/bots.d folder
 .PP
-\fB\fCcd /etc/nginx/bots.d\fR
+\fB\fCcd /etc/nginx-rc/bots.d\fR
 .RS
 .IP \(bu 2
 copy the blacklist\-user\-agents.conf file into the same folder
@@ -88,7 +88,7 @@ Use nano, vim or any other text editor to edit (if needed) blacklist\-user\-agen
 \fBINCLUDE IMPORTANT SETTINGS IN NGINX.CONF\fP
 \fBAlso see SAMPLE\-nginx.conf file in the root of this repository\fP
 .PP
-\fB\fCcd /etc/nginx/conf.d\fR
+\fB\fCcd /etc/nginx-rc/conf.d\fR
 .RS
 .IP \(bu 2
 copy the botblocker\-nginx\-settings.conf file directly from the repo
@@ -117,7 +117,7 @@ The server\fInames\fPhash settings allows Nginx Server to load this very large l
 \fBMAKE SURE\fP that your nginx.conf file contains the following include directive. If it's commented out make sure to uncomment it or none of this will work.
 .RS
 .IP \(bu 2
-\fB\fCinclude /etc/nginx/conf.d/*\fR
+\fB\fCinclude /etc/nginx-rc/conf.d/*\fR
 .RE
 .SH STEP 7: \fBVERY IMPORTANT\fP
 .PP
@@ -130,9 +130,9 @@ Open a site config file for Nginx (just one for now) and add the following lines
 These includes MUST be added within a \fBserver {}\fP block of a vhost otherwise you will get EMERG errors from Nginx.
 .RS
 .IP \(bu 2
-\fB\fCinclude /etc/nginx/bots.d/blockbots.conf;\fR
+\fB\fCinclude /etc/nginx-rc/bots.d/blockbots.conf;\fR
 .IP \(bu 2
-\fB\fCinclude /etc/nginx/bots.d/ddos.conf;\fR
+\fB\fCinclude /etc/nginx-rc/bots.d/ddos.conf;\fR
 .RE
 .SH STEP 8:
 .PP
@@ -175,7 +175,7 @@ The Nginx Ultimate Bot Blocker is now WORKING and PROTECTING your web sites !!!
 .PP
 Updating to the latest version is now as simple as:
 .PP
-\fB\fCcd /etc/nginx/conf.d\fR
+\fB\fCcd /etc/nginx-rc/conf.d\fR
 .PP
 \fB\fCsudo wget https://raw.githubusercontent.com/mitchellkrogza/nginx\-ultimate\-bad\-bot\-blocker/master/conf.d/globalblacklist.conf\fR
 .PP

@@ -103,28 +103,28 @@ echo "${bold}${green}-----------------------------------------------------------
 echo "${bold}${green}Make Backup all conf files and folders used during this test"
 echo "${bold}${green}------------------------------------------------------------"
 printf "\n"
-sudo cp /etc/nginx/bots.d/* ./dev-tools/test1_conf_files_ip_whitelist/bots.d/
-sudo cp /etc/nginx/conf.d/* ./dev-tools/test1_conf_files_ip_whitelist/conf.d/
-sudo cp /etc/nginx/sites-available/default.vhost ./dev-tools/test1_conf_files_ip_whitelist/default.vhost
-sudo cp /etc/nginx/nginx.conf ./dev-tools/test1_conf_files_ip_whitelist/nginx.conf
+sudo cp /etc/nginx-rc/bots.d/* ./dev-tools/test1_conf_files_ip_whitelist/bots.d/
+sudo cp /etc/nginx-rc/conf.d/* ./dev-tools/test1_conf_files_ip_whitelist/conf.d/
+sudo cp /etc/nginx-rc/sites-available/default.vhost ./dev-tools/test1_conf_files_ip_whitelist/default.vhost
+sudo cp /etc/nginx-rc/nginx.conf ./dev-tools/test1_conf_files_ip_whitelist/nginx.conf
 }
 
 blacklistOwnIP () {
 sudo truncate -s 0 ./dev-tools/test_units/blacklist-ips.conf
 printf '%s\t%s\n' "${thisip}" "1;" > ./dev-tools/test_units/blacklist-ips.conf
 printf '%s\t%s\n' "127.0.0.1" "1;" >> ./dev-tools/test_units/blacklist-ips.conf
-sudo cp ./dev-tools/test_units/blacklist-ips.conf /etc/nginx/bots.d/blacklist-ips.conf
+sudo cp ./dev-tools/test_units/blacklist-ips.conf /etc/nginx-rc/bots.d/blacklist-ips.conf
 sudo truncate -s 0 ./dev-tools/test_units/whitelist-ips.conf
-sudo cp ./dev-tools/test_units/whitelist-ips.conf /etc/nginx/bots.d/whitelist-ips.conf
+sudo cp ./dev-tools/test_units/whitelist-ips.conf /etc/nginx-rc/bots.d/whitelist-ips.conf
 }
 
 whitelistOwnIP () {
 sudo truncate -s 0 ./dev-tools/test_units/whitelist-ips.conf
 printf '%s\t%s\n' "${thisip}" "0;" > ./dev-tools/test_units/whitelist-ips.conf
 printf '%s\t%s\n' "127.0.0.1" "0;" >> ./dev-tools/test_units/whitelist-ips.conf
-sudo cp ./dev-tools/test_units/whitelist-ips.conf /etc/nginx/bots.d/whitelist-ips.conf
+sudo cp ./dev-tools/test_units/whitelist-ips.conf /etc/nginx-rc/bots.d/whitelist-ips.conf
 # TEST ANY CHANGES TO botblocker-nginx-settings.conf
-sudo cp ./dev-tools/test_units/botblocker-nginx-settings.conf /etc/nginx/conf.d/botblocker-nginx-settings.conf
+sudo cp ./dev-tools/test_units/botblocker-nginx-settings.conf /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf
 }
 
 # -----------

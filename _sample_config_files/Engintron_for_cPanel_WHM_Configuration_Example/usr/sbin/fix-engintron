@@ -9,7 +9,7 @@
 
 # LETS FIX NOW
  
-cd /etc/nginx/conf.d
+cd /etc/nginx-rc/conf.d
 sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/globalblacklist.conf -O globalblacklist.conf
 sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/botblocker-nginx-settings.conf -O botblocker-nginx-settings.conf
 exit 0

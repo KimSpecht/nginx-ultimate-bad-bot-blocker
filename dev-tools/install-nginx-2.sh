@@ -82,18 +82,18 @@ echo "${bold}${yellow}-----------------------------------"
 echo "${bold}${yellow}Removing Files from Install Nginx 1"
 echo "${bold}${yellow}-----------------------------------"
 printf "\n"
-sudo rm /etc/nginx/sites-available/default.vhost
-sudo rm /etc/nginx/sites-enabled/default.vhost
+sudo rm /etc/nginx-rc/sites-available/default.vhost
+sudo rm /etc/nginx-rc/sites-enabled/default.vhost
 sudo rm /var/www/html/*
-sudo rm /etc/nginx/conf.d/*.conf
-sudo rm /etc/nginx/bots.d/*.conf
+sudo rm /etc/nginx-rc/conf.d/*.conf
+sudo rm /etc/nginx-rc/bots.d/*.conf
 }
 
 checkDirectories () {
-ls -la /etc/nginx/conf.d/
-ls -la /etc/nginx/bots.d/
-ls -la /etc/nginx/sites-available/
-ls -la /etc/nginx/sites-enabled/
+ls -la /etc/nginx-rc/conf.d/
+ls -la /etc/nginx-rc/bots.d/
+ls -la /etc/nginx-rc/sites-available/
+ls -la /etc/nginx-rc/sites-enabled/
 ls -la /var/www/html/
 echo "${bold}${yellow}-------------------------------------------------"
 echo "${bold}${yellow}Confirming Files from Install Nginx 1 are Removed"
@@ -102,8 +102,8 @@ printf "\n"
 }
 
 activateVHost () {
-sudo cp ./dev-tools/default.vhost /etc/nginx/sites-available/default.vhost
-sudo ln -s /etc/nginx/sites-available/default.vhost /etc/nginx/sites-enabled/default.vhost
+sudo cp ./dev-tools/default.vhost /etc/nginx-rc/sites-available/default.vhost
+sudo ln -s /etc/nginx-rc/sites-available/default.vhost /etc/nginx-rc/sites-enabled/default.vhost
 sudo cp ./dev-tools/index.html /var/www/html/index.html
 echo "${bold}${yellow}---------------------------------------------"
 echo "${bold}${yellow}Activating default.vhost and linking to Nginx"
@@ -146,9 +146,9 @@ sudo chmod +x /usr/sbin/update-ngxblocker
 copyNginxConf () {
 printf "\n"
 echo "${bold}${magenta}------------------------------"
-echo "${bold}${magenta}Copy nginx.conf to /etc/nginx/"
+echo "${bold}${magenta}Copy nginx.conf to /etc/nginx-rc/"
 echo "${bold}${magenta}------------------------------"
-sudo cp ./dev-tools/test_units/nginx.conf-newformat /etc/nginx/nginx.conf
+sudo cp ./dev-tools/test_units/nginx.conf-newformat /etc/nginx-rc/nginx.conf
 }
 
 loadNginxConf () {
@@ -156,7 +156,7 @@ printf "\n"
 echo "${bold}${magenta}---------------"
 echo "${bold}${magenta}Load nginx.conf"
 echo "${bold}${magenta}---------------"
-sudo nginx -c /etc/nginx/nginx.conf
+sudo nginx -c /etc/nginx-rc/nginx.conf
 }
 
 forceUpdateTest1 () {
@@ -202,8 +202,8 @@ echo "${bold}${green}-------------------------------------------------------"
 printf "\n"
 sudo cp /usr/local/nginx/bots.d/* ./dev-tools/test2_conf_files/bots.d/
 sudo cp /usr/local/nginx/conf.d/* ./dev-tools/test2_conf_files/conf.d/
-sudo cp /etc/nginx/sites-available/default.vhost ./dev-tools/test2_conf_files/default.vhost
-sudo cp /etc/nginx/nginx.conf ./dev-tools/test2_conf_files/nginx.conf
+sudo cp /etc/nginx-rc/sites-available/default.vhost ./dev-tools/test2_conf_files/default.vhost
+sudo cp /etc/nginx-rc/nginx.conf ./dev-tools/test2_conf_files/nginx.conf
 }
 
 

@@ -109,7 +109,7 @@ New referrers and bots are added every other day. Each time you update **MAKE SU
 (See at very bottom of this page for all the Cloudflare IP ranges you should be whitelisting if you are on Cloudflare)
 
 ************************************************
-#EXAMPLE Nginx SSL site configuration file. (/etc/nginx/sites-available/yourdomain.com")
+#EXAMPLE Nginx SSL site configuration file. (/etc/nginx-rc/sites-available/yourdomain.com")
 
 ```
 server {
@@ -128,7 +128,7 @@ server {
 	ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
 	ssl_trusted_certificate /etc/letsencrypt/live/yourdomain.com/chain.pem;
 	# Diffie-Hellman parameter for DHE ciphersuites, recommended 2048 bits
-	ssl_dhparam /etc/nginx/ssl/dhparam.pem;
+	ssl_dhparam /etc/nginx-rc/ssl/dhparam.pem;
 	ssl_session_timeout 1d;
 	ssl_session_cache shared:SSL:128m;
 	ssl_session_tickets off;
@@ -147,8 +147,8 @@ server {
 
 
 	# ADD THE NGINX BAD BOT BLOCKER HERE (Please read full setup instructions)
-	include /etc/nginx/bots.d/blockbots.conf;
-	include /etc/nginx/bots.d/ddos.conf;
+	include /etc/nginx-rc/bots.d/blockbots.conf;
+	include /etc/nginx-rc/bots.d/ddos.conf;
 
 	# Include Any Custom Configurations and Location Directives Here
 
@@ -159,8 +159,8 @@ server {
 	listen 80;
 	server_name yourdomain.com www.yourdomain.com;
 	# Block Bad Bots even before they even get redirected
-	include /etc/nginx/bots.d/blockbots.conf;
-	include /etc/nginx/bots.d/ddos.conf;
+	include /etc/nginx-rc/bots.d/blockbots.conf;
+	include /etc/nginx-rc/bots.d/ddos.conf;
       return 301 https://yourdomain.com$request_uri;
     # HAVE SEPARATE LOGGING FOR PORT 80 (otherwise use same log location as SSL site)
 	access_log /var/log/nginx/yourdomain.com-80-access.log;

@@ -80,8 +80,8 @@ echo "${bold}${yellow}-----------------------------------"
 echo "${bold}${yellow}Removing Files from Install Nginx 2"
 echo "${bold}${yellow}-----------------------------------"
 printf "\n"
-sudo rm /etc/nginx/sites-available/default.vhost
-sudo rm /etc/nginx/sites-enabled/default.vhost
+sudo rm /etc/nginx-rc/sites-available/default.vhost
+sudo rm /etc/nginx-rc/sites-enabled/default.vhost
 sudo rm /var/www/html/*
 sudo rm /usr/local/nginx/conf.d/*.conf
 sudo rm /usr/local/nginx/bots.d/*.conf
@@ -90,16 +90,16 @@ sudo rm /usr/local/nginx/bots.d/*.conf
 copyNginxConf () {
 printf "\n"
 echo "${bold}${magenta}------------------------------"
-echo "${bold}${magenta}Copy nginx.conf to /etc/nginx/"
+echo "${bold}${magenta}Copy nginx.conf to /etc/nginx-rc/"
 echo "${bold}${magenta}------------------------------"
-sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/test_units/nginx.conf-newformat /etc/nginx/nginx.conf
+sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/test_units/nginx.conf-newformat /etc/nginx-rc/nginx.conf
 }
 
 checkDirectories () {
-ls -la /etc/nginx/myconf.d/
-ls -la /etc/nginx/mybots.d/
-ls -la /etc/nginx/sites-available/
-ls -la /etc/nginx/sites-enabled/
+ls -la /etc/nginx-rc/myconf.d/
+ls -la /etc/nginx-rc/mybots.d/
+ls -la /etc/nginx-rc/sites-available/
+ls -la /etc/nginx-rc/sites-enabled/
 ls -la /var/www/html/
 echo "${bold}${yellow}-------------------------------------------------"
 echo "${bold}${yellow}Confirming Files from Install Nginx 2 are Removed"
@@ -108,8 +108,8 @@ printf "\n"
 }
 
 activateVHost () {
-sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/default.vhost /etc/nginx/sites-available/default.vhost
-sudo ln -s /etc/nginx/sites-available/default.vhost /etc/nginx/sites-enabled/default.vhost
+sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/default.vhost /etc/nginx-rc/sites-available/default.vhost
+sudo ln -s /etc/nginx-rc/sites-available/default.vhost /etc/nginx-rc/sites-enabled/default.vhost
 sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/index.html /var/www/html/index.html
 echo "${bold}${yellow}---------------------------------------------"
 echo "${bold}${yellow}Activating default.vhost and linking to Nginx"
@@ -132,7 +132,7 @@ echo "${bold}${magenta}Execute install-ngxblocker"
 echo "${bold}${magenta}--------------------------"
 printf "\n"
 cd /usr/sbin
-sudo bash ./install-ngxblocker -x -c /etc/nginx/myconf.d -b /etc/nginx/mybots.d
+sudo bash ./install-ngxblocker -x -c /etc/nginx-rc/myconf.d -b /etc/nginx-rc/mybots.d
 }
 
 runsetupngxblocker1 () {
@@ -142,7 +142,7 @@ echo "${bold}${magenta}Execute setup-ngxblocker"
 echo "${bold}${magenta}------------------------"
 printf "\n"
 cd /usr/sbin
-sudo bash ./setup-ngxblocker -x -c /etc/nginx/myconf.d -b /etc/nginx/mybots.d
+sudo bash ./setup-ngxblocker -x -c /etc/nginx-rc/myconf.d -b /etc/nginx-rc/mybots.d
 }
 
 runupdatengxblocker () {
@@ -151,7 +151,7 @@ echo "${bold}${magenta}-------------------------"
 echo "${bold}${magenta}Execute update-ngxblocker"
 echo "${bold}${magenta}-------------------------"
 cd /usr/sbin
-sudo bash ./update-ngxblocker -c /etc/nginx/myconf.d -b /etc/nginx/mybots.d -n
+sudo bash ./update-ngxblocker -c /etc/nginx-rc/myconf.d -b /etc/nginx-rc/mybots.d -n
 }
 
 makeScriptsExecutable () {
@@ -165,7 +165,7 @@ printf "\n"
 echo "${bold}${magenta}---------------"
 echo "${bold}${magenta}Load nginx.conf"
 echo "${bold}${magenta}---------------"
-sudo nginx -c /etc/nginx/nginx.conf
+sudo nginx -c /etc/nginx-rc/nginx.conf
 }
 
 forceUpdateTest1 () {
@@ -173,7 +173,7 @@ printf "\n"
 echo "${bold}${yellow}----------------------------------------------------"
 echo "${bold}${yellow}Copy older globalblacklist.conf file to force update"
 echo "${bold}${yellow}----------------------------------------------------"
-sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/globalblacklist-dummy.conf /etc/nginx/myconf.d/globalblacklist.conf
+sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/globalblacklist-dummy.conf /etc/nginx-rc/myconf.d/globalblacklist.conf
 }
 
 forceUpdateTest2 () {
@@ -181,10 +181,10 @@ echo "${bold}${yellow}--------------------------------------"
 echo "${bold}${yellow}Delete Files to test update-ngxblocker"
 echo "${bold}${yellow}--------------------------------------"
 printf "\n"
-sudo rm /etc/nginx/myconf.d/*.conf
-sudo rm /etc/nginx/mybots.d/*.conf
-ls -la /etc/nginx/myconf.d/
-ls -la /etc/nginx/mybots.d/
+sudo rm /etc/nginx-rc/myconf.d/*.conf
+sudo rm /etc/nginx-rc/mybots.d/*.conf
+ls -la /etc/nginx-rc/myconf.d/
+ls -la /etc/nginx-rc/mybots.d/
 }
 
 activateLatestBlacklist () {
@@ -192,7 +192,7 @@ echo "${bold}${yellow}----------------------------------------------------------
 echo "${bold}${yellow}Make sure we test with latest generated globalblacklist.conf"
 echo "${bold}${yellow}------------------------------------------------------------"
 printf "\n"
-sudo cp ${TRAVIS_BUILD_DIR}/conf.d/globalblacklist.conf /etc/nginx/myconf.d/globalblacklist.conf
+sudo cp ${TRAVIS_BUILD_DIR}/conf.d/globalblacklist.conf /etc/nginx-rc/myconf.d/globalblacklist.conf
 }
 
 backupConfFiles () {
@@ -201,10 +201,10 @@ echo "${bold}${green}-------------------------------------------------------"
 echo "${bold}${green}Backup all conf files and folders used during this test"
 echo "${bold}${green}-------------------------------------------------------"
 printf "\n"
-sudo cp /etc/nginx/mybots.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/test3_conf_files/bots.d/
-sudo cp /etc/nginx/myconf.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/test3_conf_files/conf.d/
-sudo cp /etc/nginx/sites-available/default.vhost ${TRAVIS_BUILD_DIR}/.dev-tools/test3_conf_files/default.vhost
-sudo cp /etc/nginx/nginx.conf ${TRAVIS_BUILD_DIR}/.dev-tools/test3_conf_files/nginx.conf
+sudo cp /etc/nginx-rc/mybots.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/test3_conf_files/bots.d/
+sudo cp /etc/nginx-rc/myconf.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/test3_conf_files/conf.d/
+sudo cp /etc/nginx-rc/sites-available/default.vhost ${TRAVIS_BUILD_DIR}/.dev-tools/test3_conf_files/default.vhost
+sudo cp /etc/nginx-rc/nginx.conf ${TRAVIS_BUILD_DIR}/.dev-tools/test3_conf_files/nginx.conf
 }
 
 # Trigger Functions

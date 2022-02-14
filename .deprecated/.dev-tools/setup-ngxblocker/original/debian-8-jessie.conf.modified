@@ -75,8 +75,8 @@ http {
     # Nginx Bad Bot Blocker Includes
     # REPO: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
     ##
-	include /etc/nginx/conf.d/botblocker-nginx-settings.conf; 
- 	include /etc/nginx/conf.d/globalblacklist.conf;
+	include /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf;
+ 	include /etc/nginx-rc/conf.d/globalblacklist.conf;
  
  	
 
@@ -113,6 +113,6 @@ http {
 	http2_recv_timeout				30s; # default 30s
 	
 	# nginx-naxsi config
-	# include							/etc/nginx/naxsi_core.rules;
+	# include							/etc/nginx-rc/naxsi_core.rules;
 	
 }

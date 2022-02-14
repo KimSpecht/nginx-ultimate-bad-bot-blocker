@@ -13,7 +13,7 @@
 define('HTTPD_CONF_LAST_CHANGED', 10); /* In seconds */
 define('HTTPD_CONF', '/usr/local/apache/conf/httpd.conf'); /* For EA4 the path is /etc/httpd/conf/httpd.conf */
 define('HTTPD_HTTPS_PORT', '8443');
-define('NGINX_DEFAULT_HTTPS_VHOST', '/etc/nginx/conf.d/default_https.conf');
+define('NGINX_DEFAULT_HTTPS_VHOST', '/etc/nginx-rc/conf.d/default_https.conf');
 define('NGINX_HTTPS_PORT', '443');
 
 //date_default_timezone_set('UTC');
@@ -51,8 +51,8 @@ server {
 
     include common_https.conf;
     # Includes for Nginx Bad Bot Blocker
-    include /etc/nginx/bots.d/blockbots.conf;
-    include /etc/nginx/bots.d/ddos.conf;
+    include /etc/nginx-rc/bots.d/blockbots.conf;
+    include /etc/nginx-rc/bots.d/ddos.conf;
 
     location = /nginx_status {
         stub_status;

@@ -47,7 +47,7 @@ limit_conn_zone $binary_remote_addr zone=addr:50m;
 # Add FastCGI caching
 # https://www.nginx.com/blog/9\-tips\-for\-improving\-wordpress\-performance\-with\-nginx/
 
-include /etc/nginx/mime.types;
+include /etc/nginx-rc/mime.types;
 default_type application/octet\-stream;
 
 ##
@@ -82,8 +82,8 @@ gzip_types text/plain text/css application/json application/javascript applicati
 
 # Our globalblacklist.conf Bot Blocker Gets Included Because it is placed into the conf.d folder
 # which is loaded by the include below
-include /etc/nginx/conf.d/*.conf;
-include /etc/nginx/sites\-enabled/*;
+include /etc/nginx-rc/conf.d/*.conf;
+include /etc/nginx-rc/sites\-enabled/*;
 .fi
 .RE
 .PP

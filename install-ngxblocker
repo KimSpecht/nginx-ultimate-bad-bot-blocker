@@ -12,7 +12,7 @@
 
 # Use this script for a new install or to update to a new release (which has a new configuration
 # file structure) and thereafter use the Auto Update Shell Script update-ngxblocker to update
-# the blacklist in /etc/nginx/conf.d/globalblacklist.conf
+# the blacklist in /etc/nginx-rc/conf.d/globalblacklist.conf
 
 # THIS INSTALL SCRIPT ONLY COPIES THE NECESSARY FILES FOR NGINX DIRECTLY FROM THE REPO
 
@@ -32,8 +32,8 @@
 
 ######## LETS INSTALL NOW ###############################
 
-CONF_DIR=/etc/nginx/conf.d
-BOTS_DIR=/etc/nginx/bots.d
+CONF_DIR=/etc/nginx-rc/conf.d
+BOTS_DIR=/etc/nginx-rc/bots.d
 SCRIPT_DIR=/usr/local/sbin
 REPO=https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master
 

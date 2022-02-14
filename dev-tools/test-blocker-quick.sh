@@ -66,7 +66,7 @@ resetNginx () {
 echo "${bold}${green}------------------------------------------------"
 echo "${bold}${green}Disable any User Whitelisting and set to Default"
 echo "${bold}${green}------------------------------------------------"
-sudo cp ./dev-tools/test_units/blacklist-user-agents-none.conf /etc/nginx/bots.d/blacklist-user-agents.conf
+sudo cp ./dev-tools/test_units/blacklist-user-agents-none.conf /etc/nginx-rc/bots.d/blacklist-user-agents.conf
 }
 
 reloadNginX () {

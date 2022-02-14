@@ -1,6 +1,6 @@
 map $http_user_agent $bad_bot {
 	default		0;
-	include /etc/nginx/bots.d/blacklist-user-agents.conf;
+	include /etc/nginx-rc/bots.d/blacklist-user-agents.conf;
 # START BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 # END BAD BOTS ### DO NOT EDIT THIS LINE AT ALL ###
 
@@ -17,15 +17,15 @@ map $http_user_agent $bad_bot {
 
 map $http_referer $bad_words {
     default 0;
-  	include /etc/nginx/bots.d/whitelist-domains.conf;
-	include /etc/nginx/bots.d/bad-referrer-words.conf;
+  	include /etc/nginx-rc/bots.d/whitelist-domains.conf;
+	include /etc/nginx-rc/bots.d/bad-referrer-words.conf;
 }
 
 map $http_referer $bad_referer {
 	hostnames;
 	default 0;
-  	include /etc/nginx/bots.d/whitelist-domains.conf;
-  	include /etc/nginx/bots.d/custom-bad-referrers.conf;
+  	include /etc/nginx-rc/bots.d/whitelist-domains.conf;
+  	include /etc/nginx-rc/bots.d/custom-bad-referrers.conf;
 # START BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###
 # END BAD REFERRERS ### DO NOT EDIT THIS LINE AT ALL ###
 }
@@ -33,7 +33,7 @@ map $http_referer $bad_referer {
 
 geo $validate_client {
 	default		0;
-	include /etc/nginx/bots.d/whitelist-ips.conf;
+	include /etc/nginx-rc/bots.d/whitelist-ips.conf;
 # START GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 # END GOOGLE IP RANGES ### DO NOT EDIT THIS LINE AT ALL ###
 
@@ -49,7 +49,7 @@ geo $validate_client {
 # START NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 # END NIBBLER ### DO NOT EDIT THIS LINE AT ALL ###
 
-	include /etc/nginx/bots.d/blacklist-ips.conf;
+	include /etc/nginx-rc/bots.d/blacklist-ips.conf;
 
 # START KNOWN BAD IP ADDRESSES ### DO NOT EDIT THIS LINE AT ALL ###
 # END KNOWN BAD IP ADDRESSES ### DO NOT EDIT THIS LINE AT ALL ###
@@ -57,7 +57,7 @@ geo $validate_client {
 
 geo $ratelimited {
 	default 1;
-	include /etc/nginx/bots.d/whitelist-ips.conf;
+	include /etc/nginx-rc/bots.d/whitelist-ips.conf;
 }
 
 	map $bad_bot $bot_iplimit {

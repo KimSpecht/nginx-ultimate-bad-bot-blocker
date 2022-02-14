@@ -10,8 +10,8 @@ server {
     # Nginx Bad Bot Blocker Includes
     # REPO: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker
     ##
-	include /etc/nginx/bots.d/ddos.conf; 
- 	include /etc/nginx/bots.d/blockbots.conf;
+	include /etc/nginx-rc/bots.d/ddos.conf;
+ 	include /etc/nginx-rc/bots.d/blockbots.conf;
  
 	index index.html;
 

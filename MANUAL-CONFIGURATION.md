@@ -34,7 +34,7 @@ Please make sure you are subscribed to notifications to be notified when the blo
 ************************************************
 ### PLEASE READ CONFIGURATION INSTRUCTIONS BELOW THOROUGHLY :exclamation:
 
-**If you miss one step you will get an nginx EMERG :exclamation: error. This is normally a result of not downloading either blockbots.conf, ddos.conf, whitelist-ips.conf, whitelist-domains.conf, bad-referrer-words.conf, custom-bad-referrers.conf, blacklist-user-agents.conf or blacklist-ips.conf into your /etc/nginx/bots.d folder. If any of the include files are missing Nginx will EMERG and will not reload.**
+**If you miss one step you will get an nginx EMERG :exclamation: error. This is normally a result of not downloading either blockbots.conf, ddos.conf, whitelist-ips.conf, whitelist-domains.conf, bad-referrer-words.conf, custom-bad-referrers.conf, blacklist-user-agents.conf or blacklist-ips.conf into your /etc/nginx-rc/bots.d folder. If any of the include files are missing Nginx will EMERG and will not reload.**
 
 ************************************************
 ## AUTO INSTALLATION INSTRUCTIONS
@@ -50,13 +50,13 @@ Please see: https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/mas
 
 **COPY THE GLOBALBLACKLIST.CONF FILE FROM THE REPO**
 
-Copy the contents of **/conf.d/globalblacklist.conf** into your /etc/nginx/conf.d folder. 
+Copy the contents of **/conf.d/globalblacklist.conf** into your /etc/nginx-rc/conf.d folder. 
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/globalblacklist.conf -O /etc/nginx/conf.d/globalblacklist.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/globalblacklist.conf -O /etc/nginx-rc/conf.d/globalblacklist.conf`
 
 If your Linux distribution does not have wget you can replace the wget commands above using curl as follows:
 
-`curl -sL https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/globalblacklist.conf -o /etc/nginx/conf.d/globalblacklist.conf`
+`curl -sL https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/globalblacklist.conf -o /etc/nginx-rc/conf.d/globalblacklist.conf`
 
 ************************************************
 <img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/step-2.png"/>
@@ -65,12 +65,12 @@ If your Linux distribution does not have wget you can replace the wget commands 
 
 - From your command line in Linux type
 
-`sudo mkdir /etc/nginx/bots.d `
+`sudo mkdir /etc/nginx-rc/bots.d `
 
 - copy the all the following files into that folder
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/blockbots.conf -O /etc/nginx/bots.d/blockbots.conf`
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/ddos.conf -O /etc/nginx/bots.d/ddos.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/blockbots.conf -O /etc/nginx-rc/bots.d/blockbots.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/ddos.conf -O /etc/nginx-rc/bots.d/ddos.conf`
 
 ************************************************
 <img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/step-3.png"/>
@@ -81,12 +81,12 @@ Whitelist all your own domain names and IP addresses. **Please note important ch
 
 - copy the whitelist-ips.conf file into that folder
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/whitelist-ips.conf -O /etc/nginx/bots.d/whitelist-ips.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/whitelist-ips.conf -O /etc/nginx-rc/bots.d/whitelist-ips.conf`
 
 
 - copy the whitelist-domains.conf file into the same folder
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/whitelist-domains.conf -O /etc/nginx/bots.d/whitelist-domains.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/whitelist-domains.conf -O /etc/nginx-rc/bots.d/whitelist-domains.conf`
 
 
 Use nano, vim or any other text editor to edit both whitelist-ips.conf and whitelist-domains.conf to include all your own domain names and IP addresses that you want to specifically whitelist from the blocker script. 
@@ -97,11 +97,11 @@ When pulling any future updates now your domains and IP whitelists will not be o
 
 **BLACKLIST USING YOUR OWN CUSTOM USER-AGENT BLACKLIST**
 
-Copy the custom User-Agents blacklist file into your /etc/nginx/bots.d folder
+Copy the custom User-Agents blacklist file into your /etc/nginx-rc/bots.d folder
 
 - copy the blacklist-user-agents.conf file from the repository
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/blacklist-user-agents.conf -O /etc/nginx/bots.d/blacklist-user-agents.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/blacklist-user-agents.conf -O /etc/nginx-rc/bots.d/blacklist-user-agents.conf`
 
 
 Use nano, vim or any other text editor to edit (if needed) blacklist-user-agents.conf to include your own custom list of bad agents that are not included in the blocker like "omgilibot" which some people choose to block. 
@@ -112,11 +112,11 @@ When pulling any future updates now your custom User-Agents blacklist will not b
 
 **BLACKLIST USING YOUR OWN CUSTOM BAD REFERRERS**
 
-Copy the custom bad referrers blacklist file into your /etc/nginx/bots.d folder
+Copy the custom bad referrers blacklist file into your /etc/nginx-rc/bots.d folder
 
 - copy the custom-bad-referrers.conf file from the repository
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/custom-bad-referrers.conf -O /etc/nginx/bots.d/custom-bad-referrers.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/custom-bad-referrers.conf -O /etc/nginx-rc/bots.d/custom-bad-referrers.conf`
 
 Use nano, vim or any other text editor to edit (if needed) custom-bad-referrers.conf to include your own custom list of bad referrer domains that are not included in the blocker. 
 When pulling any future updates now your custom referrers list will not be overwritten.
@@ -126,11 +126,11 @@ When pulling any future updates now your custom referrers list will not be overw
 
 **BLACKLIST IPS AND IP RANGES USING YOUR OWN CUSTOM LIST**
 
-Copy the custom IP blacklist file into your /etc/nginx/bots.d folder
+Copy the custom IP blacklist file into your /etc/nginx-rc/bots.d folder
 
 - copy the blacklist-ips.conf file from the repository
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/blacklist-ips.conf -O /etc/nginx/bots.d/blacklist-ips.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/blacklist-ips.conf -O /etc/nginx-rc/bots.d/blacklist-ips.conf`
 
 Use nano, vim or any other text editor to edit (if needed) blacklist-ips.conf to include your own custom list of IP Addresses and IP Ranges that you wish to block.  
 When pulling any future updates now your custom IP blacklist will not be overwritten.
@@ -140,11 +140,11 @@ When pulling any future updates now your custom IP blacklist will not be overwri
 
 **DOWNLOAD CUSTOM BAD REFERRER WORDS INCLUDE FILE FOR CUSTOMIZED SCANNING OF BAD WORDS**
 
-Copy the custom bad referrer words include file into your /etc/nginx/bots.d folder
+Copy the custom bad referrer words include file into your /etc/nginx-rc/bots.d folder
 
 - copy the bad-referrer-words.conf file from the repository
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/bad-referrer-words.conf -O /etc/nginx/bots.d/bad-referrer-words.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/bots.d/bad-referrer-words.conf -O /etc/nginx-rc/bots.d/bad-referrer-words.conf`
 
 Use nano, vim or any other text editor to edit the bad-referrer-words.conf file as you like. 
 When pulling any future updates now your custom bad referrer words list will not be overwritten.
@@ -158,7 +158,7 @@ When pulling any future updates now your custom bad referrer words list will not
 
 - copy the botblocker-nginx-settings.conf file directly from the repo
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/botblocker-nginx-settings.conf -O /etc/nginx/conf.d/botblocker-nginx-settings.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/botblocker-nginx-settings.conf -O /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf`
 
 **What is included in this settings file above for nginx?**
 The important settings file above adds the rate limiting functions and hash_bucket settings for nginx for you. Below is what the file contains, you cn add these manually to your nginx.conf file if you so please but the include file above will do it for you ad nginx loads any .conf file in /etc/conf.d (See STEP 6)
@@ -182,7 +182,7 @@ The server_names_hash settings allows Nginx Server to load this very large list 
 
 **MAKE SURE** that your nginx.conf file contains the following include directive. If it's commented out make sure to uncomment it or none of this will work.
 
-- `include /etc/nginx/conf.d/*;`
+- `include /etc/nginx-rc/conf.d/*;`
 
 
 ************************************************
@@ -197,9 +197,9 @@ Open a site config file for Nginx (just one for now) and add the following lines
 
 These includes MUST be added within a **server {}** block of a vhost otherwise you will get EMERG errors from Nginx.
 
-- `include /etc/nginx/bots.d/blockbots.conf;`
+- `include /etc/nginx-rc/bots.d/blockbots.conf;`
 
-- `include /etc/nginx/bots.d/ddos.conf;`
+- `include /etc/nginx-rc/bots.d/ddos.conf;`
 
 ************************************************
 <img src="https://github.com/KimSpecht/nginx-ultimate-bad-bot-blocker/blob/master/.assets/step-11b.png"/>
@@ -247,9 +247,9 @@ The Nginx Ultimate Bot Blocker is now WORKING and PROTECTING your web sites !!!
 
 Updating to the latest version is now as simple as:
 
-`cd /etc/nginx/conf.d`
+`cd /etc/nginx-rc/conf.d`
 
-`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/globalblacklist.conf -O /etc/nginx/conf.d/globalblacklist.conf`
+`sudo wget https://raw.githubusercontent.com/KimSpecht/nginx-ultimate-bad-bot-blocker/master/conf.d/globalblacklist.conf -O /etc/nginx-rc/conf.d/globalblacklist.conf`
 
 `sudo nginx -t`
 

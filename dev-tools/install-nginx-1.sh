@@ -97,7 +97,7 @@ printf "\n"
 echo "${bold}${yellow}---------------------------"
 echo "${bold}${yellow}Making backup of nginx.conf"
 echo "${bold}${yellow}---------------------------"
-sudo cp /etc/nginx/nginx.conf ./dev-tools/test1_conf_backup_nginxconf/nginx.conf
+sudo cp /etc/nginx-rc/nginx.conf ./dev-tools/test1_conf_backup_nginxconf/nginx.conf
 }
 
 prepareVhost () {
@@ -105,23 +105,23 @@ printf "\n"
 echo "${bold}${yellow}-------------------------------------------"
 echo "${bold}${yellow}Delete any default files installed by Nginx"
 echo "${bold}${yellow}-------------------------------------------"
-sudo rm /etc/nginx/sites-available/*
-#sudo mv /etc/nginx/sites-available/default /etc/nginx/sites-available/default.vhost
-sudo rm /etc/nginx/sites-enabled/*
+sudo rm /etc/nginx-rc/sites-available/*
+#sudo mv /etc/nginx-rc/sites-available/default /etc/nginx-rc/sites-available/default.vhost
+sudo rm /etc/nginx-rc/sites-enabled/*
 sudo rm /var/www/html/*
-ls -la /etc/nginx/sites-available/
-ls -la /etc/nginx/sites-enabled/
+ls -la /etc/nginx-rc/sites-available/
+ls -la /etc/nginx-rc/sites-enabled/
 
 printf "\n"
 echo "${bold}${yellow}---------------------"
 echo "${bold}${yellow}Setup Vhost for Nginx"
 echo "${bold}${yellow}---------------------"
-#sudo rm /etc/nginx/sites-available/default
-sudo cp ./dev-tools/default.vhost /etc/nginx/sites-available/default.vhost
-sudo ln -s /etc/nginx/sites-available/default.vhost /etc/nginx/sites-enabled/default.vhost
+#sudo rm /etc/nginx-rc/sites-available/default
+sudo cp ./dev-tools/default.vhost /etc/nginx-rc/sites-available/default.vhost
+sudo ln -s /etc/nginx-rc/sites-available/default.vhost /etc/nginx-rc/sites-enabled/default.vhost
 sudo cp ./dev-tools/index.html /var/www/html/index.html
-ls -la /etc/nginx/sites-available/
-ls -la /etc/nginx/sites-enabled/
+ls -la /etc/nginx-rc/sites-available/
+ls -la /etc/nginx-rc/sites-enabled/
 }
 
 makeScriptsExecutable () {
@@ -166,7 +166,7 @@ sudo bash /usr/sbin/setup-ngxblocker -x
 }
 
 loadNginxConf () {
-sudo nginx -c /etc/nginx/nginx.conf
+sudo nginx -c /etc/nginx-rc/nginx.conf
 }
 
 forceUpdateTest1 () {
@@ -174,17 +174,17 @@ printf "\n"
 echo "${bold}${yellow}----------------------------------------------------"
 echo "${bold}${yellow}Copy older globalblacklist.conf file to force update"
 echo "${bold}${yellow}----------------------------------------------------"
-sudo cp ./dev-tools/globalblacklist-dummy.conf /etc/nginx/conf.d/globalblacklist.conf
+sudo cp ./dev-tools/globalblacklist-dummy.conf /etc/nginx-rc/conf.d/globalblacklist.conf
 }
 
 forceUpdateTest2 () {
 echo "${bold}${yellow}--------------------------------------"
 echo "${bold}${yellow}Delete Files to test update-ngxblocker"
 echo "${bold}${yellow}--------------------------------------"
-sudo rm /etc/nginx/conf.d/*.conf
-sudo rm /etc/nginx/bots.d/*.conf
-ls -la /etc/nginx/conf.d/
-ls -la /etc/nginx/bots.d/
+sudo rm /etc/nginx-rc/conf.d/*.conf
+sudo rm /etc/nginx-rc/bots.d/*.conf
+ls -la /etc/nginx-rc/conf.d/
+ls -la /etc/nginx-rc/bots.d/
 }
 
 forceUpdateTest3 () {
@@ -192,7 +192,7 @@ printf "\n"
 echo "${bold}${yellow}----------------------------------------------------"
 echo "${bold}${yellow}Copy older globalblacklist.conf file to force update"
 echo "${bold}${yellow}----------------------------------------------------"
-sudo cp ./dev-tools/globalblacklist-dummy.conf /etc/nginx/conf.d/globalblacklist.conf
+sudo cp ./dev-tools/globalblacklist-dummy.conf /etc/nginx-rc/conf.d/globalblacklist.conf
 }
 
 runupdatengxblocker () {
@@ -207,7 +207,7 @@ activateLatestBlacklist () {
 echo "${bold}${yellow}------------------------------------------------------------"
 echo "${bold}${yellow}Make sure we test with latest generated globalblacklist.conf"
 echo "${bold}${yellow}------------------------------------------------------------"
-sudo cp ./conf.d/globalblacklist.conf /etc/nginx/conf.d/globalblacklist.conf
+sudo cp ./conf.d/globalblacklist.conf /etc/nginx-rc/conf.d/globalblacklist.conf
 }
 
 backupConfFiles () {
@@ -215,18 +215,18 @@ printf "\n"
 echo "${bold}${green}-------------------------------------------------------"
 echo "${bold}${green}Backup all conf files and folders used during this test"
 echo "${bold}${green}-------------------------------------------------------"
-sudo cp /etc/nginx/bots.d/* ./dev-tools/test1_conf_files/bots.d/
-sudo cp /etc/nginx/conf.d/* ./dev-tools/test1_conf_files/conf.d/
-sudo cp /etc/nginx/sites-available/default.vhost ./dev-tools/test1_conf_files/default.vhost
-sudo cp /etc/nginx/nginx.conf ./dev-tools/test1_conf_files/nginx.conf
+sudo cp /etc/nginx-rc/bots.d/* ./dev-tools/test1_conf_files/bots.d/
+sudo cp /etc/nginx-rc/conf.d/* ./dev-tools/test1_conf_files/conf.d/
+sudo cp /etc/nginx-rc/sites-available/default.vhost ./dev-tools/test1_conf_files/default.vhost
+sudo cp /etc/nginx-rc/nginx.conf ./dev-tools/test1_conf_files/nginx.conf
 }
 
 copyNginxConf () {
 printf "\n"
 echo "${bold}${magenta}------------------------------"
-echo "${bold}${magenta}Copy nginx.conf to /etc/nginx/"
+echo "${bold}${magenta}Copy nginx.conf to /etc/nginx-rc/"
 echo "${bold}${magenta}------------------------------"
-sudo cp ./dev-tools/test_units/nginx.conf-newformat /etc/nginx/nginx.conf
+sudo cp ./dev-tools/test_units/nginx.conf-newformat /etc/nginx-rc/nginx.conf
 }
 
 getnginxversion () {

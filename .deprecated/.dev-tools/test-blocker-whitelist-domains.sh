@@ -80,7 +80,7 @@ echo "${bold}${green}---------------------------------------"
 echo "${bold}${green}Activating Users whitelist-domains.conf"
 echo "${bold}${green}---------------------------------------"
 printf "\n"
-sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/test_units/whitelist-domains.conf /etc/nginx/bots.d/whitelist-domains.conf
+sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/test_units/whitelist-domains.conf /etc/nginx-rc/bots.d/whitelist-domains.conf
 }
 
 run_curltest1 () {

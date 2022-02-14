@@ -76,15 +76,15 @@ sleep 10s
 }
 
 installNginxMainstream (){
-sudo rm -rfv /etc/nginx/mybots.d/
-sudo rm -rfv /etc/nginx/myconf.d/
-sudo rm -rfv /etc/nginx/conf.d/
-sudo rm -rfv /etc/nginx/bots.d/
-sudo rm /etc/nginx/sites-available/*
-sudo rm /etc/nginx/sites-enabled/*
-sudo rm /etc/nginx/nginx.conf
-ls -la /etc/nginx/
-sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/test1_conf_backup_nginxconf/nginx13.conf /etc/nginx/nginx.conf
+sudo rm -rfv /etc/nginx-rc/mybots.d/
+sudo rm -rfv /etc/nginx-rc/myconf.d/
+sudo rm -rfv /etc/nginx-rc/conf.d/
+sudo rm -rfv /etc/nginx-rc/bots.d/
+sudo rm /etc/nginx-rc/sites-available/*
+sudo rm /etc/nginx-rc/sites-enabled/*
+sudo rm /etc/nginx-rc/nginx.conf
+ls -la /etc/nginx-rc/
+sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/test1_conf_backup_nginxconf/nginx13.conf /etc/nginx-rc/nginx.conf
 sudo apt-get purge nginx-full
 sudo apt-get purge nginx-common
 sudo apt-get purge nginx*
@@ -110,10 +110,10 @@ sudo apt remove nginx nginx-common nginx-full nginx-core nginx*
 sudo apt -y install nginx
 sudo nginx -V
 sudo nginx -t && sudo nginx -s reload
-sudo mkdir /etc/nginx/conf.d
-sudo mkdir /etc/nginx/bots.d
-sudo mkdir /etc/nginx/sites-available/
-sudo mkdir /etc/nginx/sites-enabled/
+sudo mkdir /etc/nginx-rc/conf.d
+sudo mkdir /etc/nginx-rc/bots.d
+sudo mkdir /etc/nginx-rc/sites-available/
+sudo mkdir /etc/nginx-rc/sites-enabled/
 }
 
 cleanupNginx1 () {
@@ -121,20 +121,20 @@ echo "${bold}${yellow}----------------------------------------------"
 echo "${bold}${yellow}Removing Files from Install Nginx Mainline PPA"
 echo "${bold}${yellow}----------------------------------------------"
 printf "\n"
-sudo rm /etc/nginx/sites-available/default.vhost
-sudo rm /etc/nginx/sites-enabled/default.vhost
-sudo rm /etc/nginx/sites-available/*
-sudo rm /etc/nginx/sites-enabled/*
+sudo rm /etc/nginx-rc/sites-available/default.vhost
+sudo rm /etc/nginx-rc/sites-enabled/default.vhost
+sudo rm /etc/nginx-rc/sites-available/*
+sudo rm /etc/nginx-rc/sites-enabled/*
 sudo rm /var/www/html/*
-sudo rm /etc/nginx/conf.d/*.conf
-sudo rm /etc/nginx/bots.d/*.conf
+sudo rm /etc/nginx-rc/conf.d/*.conf
+sudo rm /etc/nginx-rc/bots.d/*.conf
 }
 
 checkDirectories () {
-ls -la /etc/nginx/conf.d/
-ls -la /etc/nginx/bots.d/
-ls -la /etc/nginx/sites-available/
-ls -la /etc/nginx/sites-enabled/
+ls -la /etc/nginx-rc/conf.d/
+ls -la /etc/nginx-rc/bots.d/
+ls -la /etc/nginx-rc/sites-available/
+ls -la /etc/nginx-rc/sites-enabled/
 ls -la /var/www/html/
 echo "${bold}${yellow}------------------------------------------------------------"
 echo "${bold}${yellow}Confirming Files from Install Nginx Mainline PPA are Removed"
@@ -143,8 +143,8 @@ printf "\n"
 }
 
 activateVHost () {
-sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/default.vhost /etc/nginx/sites-available/default.vhost
-sudo ln -s /etc/nginx/sites-available/default.vhost /etc/nginx/sites-enabled/default.vhost
+sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/default.vhost /etc/nginx-rc/sites-available/default.vhost
+sudo ln -s /etc/nginx-rc/sites-available/default.vhost /etc/nginx-rc/sites-enabled/default.vhost
 sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/index.html /var/www/html/index.html
 echo "${bold}${yellow}---------------------------------------------"
 echo "${bold}${yellow}Activating default.vhost and linking to Nginx"
@@ -153,7 +153,7 @@ printf "\n"
 }
 
 activateVHost2 () {
-sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/default-noincludes.vhost /etc/nginx/sites-available/default.vhost
+sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/default-noincludes.vhost /etc/nginx-rc/sites-available/default.vhost
 echo "${bold}${yellow}---------------------------------------------"
 echo "${bold}${yellow}Activating default.vhost and linking to Nginx"
 echo "${bold}${yellow}---------------------------------------------"
@@ -199,7 +199,7 @@ printf "\n"
 echo "${bold}${magenta}---------------"
 echo "${bold}${magenta}Load nginx.conf"
 echo "${bold}${magenta}---------------"
-sudo nginx -c /etc/nginx/nginx.conf
+sudo nginx -c /etc/nginx-rc/nginx.conf
 }
 
 forceUpdateTest1 () {
@@ -207,7 +207,7 @@ printf "\n"
 echo "${bold}${yellow}----------------------------------------------------"
 echo "${bold}${yellow}Copy older globalblacklist.conf file to force update"
 echo "${bold}${yellow}----------------------------------------------------"
-sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/globalblacklist-dummy.conf /etc/nginx/conf.d/globalblacklist.conf
+sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/globalblacklist-dummy.conf /etc/nginx-rc/conf.d/globalblacklist.conf
 }
 
 forceUpdateTest2 () {
@@ -215,10 +215,10 @@ echo "${bold}${yellow}--------------------------------------"
 echo "${bold}${yellow}Delete Files to test update-ngxblocker"
 echo "${bold}${yellow}--------------------------------------"
 printf "\n"
-sudo rm /etc/nginx/conf.d/*.conf
-sudo rm /etc/nginx/bots.d/*.conf
-ls -la /etc/nginx/conf.d/
-ls -la /etc/nginx/bots.d/
+sudo rm /etc/nginx-rc/conf.d/*.conf
+sudo rm /etc/nginx-rc/bots.d/*.conf
+ls -la /etc/nginx-rc/conf.d/
+ls -la /etc/nginx-rc/bots.d/
 }
 
 runupdatengxblocker () {
@@ -235,7 +235,7 @@ echo "${bold}${yellow}----------------------------------------------------------
 echo "${bold}${yellow}Make sure we test with latest generated globalblacklist.conf"
 echo "${bold}${yellow}------------------------------------------------------------"
 printf "\n"
-sudo cp ${TRAVIS_BUILD_DIR}/conf.d/globalblacklist.conf /etc/nginx/conf.d/globalblacklist.conf
+sudo cp ${TRAVIS_BUILD_DIR}/conf.d/globalblacklist.conf /etc/nginx-rc/conf.d/globalblacklist.conf
 }
 
 backupConfFiles () {
@@ -244,10 +244,10 @@ echo "${bold}${green}-------------------------------------------------------"
 echo "${bold}${green}Backup all conf files and folders used during this test"
 echo "${bold}${green}-------------------------------------------------------"
 printf "\n"
-sudo cp /etc/nginx/bots.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/test5_conf_files/bots.d/
-sudo cp /etc/nginx/conf.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/test5_conf_files/conf.d/
-sudo cp /etc/nginx/sites-available/default.vhost ${TRAVIS_BUILD_DIR}/.dev-tools/test5_conf_files/default.vhost
-sudo cp /etc/nginx/nginx.conf ${TRAVIS_BUILD_DIR}/.dev-tools/test5_conf_files/nginx.conf
+sudo cp /etc/nginx-rc/bots.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/test5_conf_files/bots.d/
+sudo cp /etc/nginx-rc/conf.d/* ${TRAVIS_BUILD_DIR}/.dev-tools/test5_conf_files/conf.d/
+sudo cp /etc/nginx-rc/sites-available/default.vhost ${TRAVIS_BUILD_DIR}/.dev-tools/test5_conf_files/default.vhost
+sudo cp /etc/nginx-rc/nginx.conf ${TRAVIS_BUILD_DIR}/.dev-tools/test5_conf_files/nginx.conf
 }
 
 getnginxversion () {
@@ -257,9 +257,9 @@ sudo nginx -v &> ${TRAVIS_BUILD_DIR}/.dev-tools/nginxv3.txt
 copyNginxConf () {
 printf "\n"
 echo "${bold}${magenta}------------------------------"
-echo "${bold}${magenta}Copy nginx.conf to /etc/nginx/"
+echo "${bold}${magenta}Copy nginx.conf to /etc/nginx-rc/"
 echo "${bold}${magenta}------------------------------"
-sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/test_units/nginx.conf-newformat /etc/nginx/nginx.conf
+sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/test_units/nginx.conf-newformat /etc/nginx-rc/nginx.conf
 }
 
 cleanupNginxKeys () {

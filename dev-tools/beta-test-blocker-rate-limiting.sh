@@ -82,7 +82,7 @@ echo "${bold}${yellow}-----------------------------"
 echo "${bold}${yellow}Making GoogleBot ${yellow}RATE LIMITED"
 echo "${bold}${yellow}-----------------------------"
 printf "\n\n"
-sudo cp ./dev-tools/test_units/rate-limiting-user-agents.conf /etc/nginx/bots.d/blacklist-user-agents.conf
+sudo cp ./dev-tools/test_units/rate-limiting-user-agents.conf /etc/nginx-rc/bots.d/blacklist-user-agents.conf
 }
 
 testRateLimiting () {
@@ -183,10 +183,10 @@ echo "${bold}${green}-----------------------------------------------------------
 echo "${bold}${green}Make Backup all conf files and folders used during this test"
 echo "${bold}${green}------------------------------------------------------------"
 printf "\n"
-sudo cp /etc/nginx/bots.d/* ./dev-tools/beta_conf_files_ratelimiting/bots.d/
-sudo cp /etc/nginx/conf.d/* ./dev-tools/beta_conf_files_ratelimiting/conf.d/
-sudo cp /etc/nginx/sites-available/default.vhost ./dev-tools/beta_conf_files_ratelimiting/default.vhost
-sudo cp /etc/nginx/nginx.conf ./dev-tools/beta_conf_files_ratelimiting/nginx.conf
+sudo cp /etc/nginx-rc/bots.d/* ./dev-tools/beta_conf_files_ratelimiting/bots.d/
+sudo cp /etc/nginx-rc/conf.d/* ./dev-tools/beta_conf_files_ratelimiting/conf.d/
+sudo cp /etc/nginx-rc/sites-available/default.vhost ./dev-tools/beta_conf_files_ratelimiting/default.vhost
+sudo cp /etc/nginx-rc/nginx.conf ./dev-tools/beta_conf_files_ratelimiting/nginx.conf
 }
 
 # -----------

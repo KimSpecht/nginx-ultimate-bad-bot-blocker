@@ -77,7 +77,7 @@ sudo bash ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/setup-ngxblocker -x -m
 setup_ubuntu_1804MI3 () {
 sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/ubuntu18-hashbucket.conf ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/ubuntu18.conf.modified.hashbucket 
 sudo bash ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/setup-ngxblocker -x -m ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/ubuntu18.conf.modified.hashbucket
-sudo cat /etc/nginx/conf.d/botblocker-nginx-settings.conf > ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/botblocker-nginx-settings.conf
+sudo cat /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf > ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/botblocker-nginx-settings.conf
 }
 
 setup_ubuntu_1604 () {
@@ -168,13 +168,13 @@ sudo bash ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/setup-ngxblocker -x -m
 setup_debian8MI2 () {
 sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/debian-8-jessie-hashbucket.conf ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/debian-8-jessie.modified.hashbucket 
 sudo bash ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/setup-ngxblocker -x -m ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/debian-8-jessie.modified.hashbucket
-sudo cat /etc/nginx/conf.d/botblocker-nginx-settings.conf > ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/botblocker-nginx-settings-debian-jessie-8.conf
+sudo cat /etc/nginx-rc/conf.d/botblocker-nginx-settings.conf > ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/commented/botblocker-nginx-settings-debian-jessie-8.conf
 }
 
 #setup_ansible1 () {
 #sudo cp ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/vhost-cases/ansible.conf ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/vhost-cases/ansible.vhost
 #sudo bash ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/setup-ngxblocker -v ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/vhost-cases/ -x -e vhost    
-#sed -i '/server_.*/a\\n### NGINX BOT BLOCKER INCLUDE\ninclude /etc/nginx/bots.d/blockbots.conf;\n' ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/vhost-cases/ansible.vhost
+#sed -i '/server_.*/a\\n### NGINX BOT BLOCKER INCLUDE\ninclude /etc/nginx-rc/bots.d/blockbots.conf;\n' ${TRAVIS_BUILD_DIR}/.dev-tools/setup-ngxblocker/vhost-cases/ansible.vhost
 #}
 
 # -----------------

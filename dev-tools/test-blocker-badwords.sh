@@ -82,7 +82,7 @@ echo "${bold}${green}----------------------------------------"
 echo "${bold}${green}Activating Users bad-referrer-words.conf"
 echo "${bold}${green}----------------------------------------"
 printf "\n"
-sudo cp ./dev-tools/test_units/bad-referrer-words.conf /etc/nginx/bots.d/bad-referrer-words.conf
+sudo cp ./dev-tools/test_units/bad-referrer-words.conf /etc/nginx-rc/bots.d/bad-referrer-words.conf
 }
 
 run_curltest1 () {

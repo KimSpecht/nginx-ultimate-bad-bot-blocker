@@ -179,12 +179,12 @@ echo "${bold}${green}------------------------------------------------"
 echo "${bold}${green}Activating Users User-Agents Whitelist/Blacklist"
 echo "${bold}${green}------------------------------------------------"
 printf "\n\n"
-sudo cp ./dev-tools/test_units/blacklist-user-agents.conf /etc/nginx/bots.d/blacklist-user-agents.conf
+sudo cp ./dev-tools/test_units/blacklist-user-agents.conf /etc/nginx-rc/bots.d/blacklist-user-agents.conf
 echo "${bold}${green}----------------------------------------------"
 echo "${bold}${green}Activating Users Referrers Whitelist/Blacklist"
 echo "${bold}${green}----------------------------------------------"
 printf "\n\n"
-sudo cp ./dev-tools/test_units/custom-bad-referrers.conf /etc/nginx/bots.d/custom-bad-referrers.conf
+sudo cp ./dev-tools/test_units/custom-bad-referrers.conf /etc/nginx-rc/bots.d/custom-bad-referrers.conf
 }
 
 testBadUserAgents () {
@@ -243,10 +243,10 @@ echo "${bold}${green}-----------------------------------------------------------
 echo "${bold}${green}Make Backup all conf files and folders used during this test"
 echo "${bold}${green}------------------------------------------------------------"
 printf "\n"
-sudo cp /etc/nginx/bots.d/* ./dev-tools/beta_conf_files_whitelist/bots.d/
-sudo cp /etc/nginx/conf.d/* ./dev-tools/beta_conf_files_whitelist/conf.d/
-sudo cp /etc/nginx/sites-available/default.vhost ./dev-tools/beta_conf_files_whitelist/default.vhost
-sudo cp /etc/nginx/nginx.conf ./dev-tools/beta_conf_files_whitelist/nginx.conf
+sudo cp /etc/nginx-rc/bots.d/* ./dev-tools/beta_conf_files_whitelist/bots.d/
+sudo cp /etc/nginx-rc/conf.d/* ./dev-tools/beta_conf_files_whitelist/conf.d/
+sudo cp /etc/nginx-rc/sites-available/default.vhost ./dev-tools/beta_conf_files_whitelist/default.vhost
+sudo cp /etc/nginx-rc/nginx.conf ./dev-tools/beta_conf_files_whitelist/nginx.conf
 }
 
 # -----------
